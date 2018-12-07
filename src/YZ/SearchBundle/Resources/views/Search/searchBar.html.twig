@@ -1,0 +1,51 @@
+
+<div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
+  <div class="header_search">
+    <div class="header_search_content">
+      <div class="form-group">
+          {{ form_start(form, {'action': path('yz_handle_search'), 'method': 'get', 'attr': {'class': 'header_search_form clearfix'}}) }}
+          {{ form_widget(form.search, {'attr': {'class': 'header_search_input search', 'name': 'search', 'autocomplete': 'off', 'placeholder': 'Plus de 1000 articles disponibles en stock ...'}} )}}
+
+
+          <div id="categorieHide" class="custom_dropdown">
+            <div class="custom_dropdown_list">
+              <span class="custom_dropdown_placeholder "></span>
+              <ul class="custom_list clc">
+                <li>
+                  <a class="clc" href="#">Catégories</a>
+                </li>
+                {% for category in get_categories() %}
+                <li>
+                      <a class="clc" href="#">{{category.name|capitalize}}</a>
+                    </li>
+                  {% endfor %}
+
+
+                <li>
+                  <a class="clc" href="#">Laptops</a>
+                </li>
+                <li>
+                  <a class="clc" href="#">Cameras</a>
+                </li>
+                <li>
+                  <a class="clc" href="#">Hardware</a>
+                </li>
+                <li>
+                  <a class="clc" href="#">Smartphones</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <button type="submit" class="header_search_button trans_300" value="Submit"><img src="{{ asset('images/search.png')}}" alt=""></button>
+        {{ form_end(form) }}
+      </div>
+    </div>
+    <div class="panel panel-primary" id="search-result">
+      <ul class="panel-content">
+
+
+      </ul>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,3 @@
+yz_contact_form:
+    path:     /contact
+    defaults: { _controller: YZContactFormBundle:Contact:form}

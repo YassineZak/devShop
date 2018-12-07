@@ -1,0 +1,146 @@
+{% extends "YZEcommerceBundle::layout.html.twig" %}
+
+{% block title %}
+  Boutique -
+  {{ parent() }}
+{% endblock %}
+{% block body %}
+  <!-- Home -->
+  <div class="home">
+    <div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/shop_background.jpg"></div>
+    <div class="home_overlay"></div>
+    <div class="home_content d-flex flex-column align-items-center justify-content-center">
+      {% if app.request.get('_route') == 'yz_ecommerce_categorypage' %}
+      {% if products[0].category.name is defined %}
+      <h2 class="home_title">{{products[0].category.name|capitalize}}</h2>
+      {% else %}
+          <h2 class="home_title"> Aucun produit disponible </h2>
+          {% endif %}
+      {% else %}
+      <h2 class="home_title">Devshop Boutique</h2>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Shop -->
+
+  <div class="shop">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+
+          <!-- Shop Sidebar -->
+          <div class="shop_sidebar">
+            <div class="sidebar_section">
+              <div class="sidebar_title">Categories</div>
+              <ul class="sidebar_categories">
+                {% for category in get_categories() %}
+                  <li>
+                    <a href="{{ path('yz_ecommerce_categorypage', {'slug': category.slug}) }}">{{category.name|capitalize}}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+						</div>
+        </div>
+        <div class="col-lg-9">
+
+          <!-- Shop Content -->
+
+          <div class="shop_content">
+            <div class="shop_bar clearfix">
+              <div class="shop_product_count">
+                {% if products|length == 1 %}
+                <span>{{products|length}}</span>
+                Produit</div>
+                {% else %}
+                <span>{{products|length}}</span>
+                Produits</div>
+                {% endif %}
+              <div class="shop_sorting">
+                <span>Trier Par:</span>
+                <ul>
+                  <li>
+                    <span class="sorting_text">Plus récents<i class="fas fa-chevron-down"></span></i>
+                    <ul>
+                      <li class="shop_sorting_button" data-isotope-option='{ "sortBy": "original-order" }'>Plus récents</li>
+                      <li class="shop_sorting_button" data-isotope-option='{ "sortBy": "name" }'>Par nom</li>
+                      <li class="shop_sorting_button" data-isotope-option='{ "sortBy": "price" }'>Par prix</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="product_grid">
+              <div class="product_grid_border"></div>
+
+              <!-- Product Item -->
+              {{products|length}}
+              {% for product in products %}
+
+                <div class="product_item is_new">
+                  <div class="product_border"></div>
+                  <div class="product_image d-flex flex-column align-items-center justify-content-center">
+                      {% if app.environment == 'dev' %}
+                    <img src="/devshop/web{{ vich_uploader_asset(product, 'imageFile') }}" alt="">
+                      {% else %}
+                    <img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="">
+                      {% endif %}
+                  </div>
+                  <div class="product_content">
+                    {% if product.promo is null %}
+                      <div class="product_price">
+                        {{product.prixTtc}}
+                        €
+                      {% else %}
+                        <div class="product_price promoShop">
+                          {{product.promoTtc}}
+                          €<span>{{product.prixTtc}}
+                            €</span>
+                        {% endif %}
+                      </div>
+                      <div class="product_name">
+                        <div>
+                          <a href="{{ path('yz_ecommerce_productpage', {'slug': product.slug}) }}" tabindex="0">
+                            {% if product.titre | length > 20 %}{{product.titre|slice(0, 20)}}...{% else %}{{product.titre}}
+                            {% endif %}
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product_fav">
+                      <i class="fas fa-heart"></i>
+                    </div>
+                    <ul class="product_marks">
+                      <li class="product_mark product_discount">-25%</li>
+                      {% if product.promo is null %}
+                        <li class="product_mark product_new">new</li>
+                      {% else %}
+                        <li class="product_mark product_new" style="background: red;">-{{product.promoAvg}}%</li>
+                      {% endif %}
+                    </ul>
+                  </div>
+                {% endfor %}
+
+              </div>
+
+              <!-- Shop Page Navigation -->
+              {% if nbPages is defined %}
+              <ul class="pagination" style="margin-left: 40%;">
+                {% for p in range(1, nbPages) %}
+                  <li{% if p == page %} class="active" {% endif %}>
+                    <a href="{{ path('yz_ecommerce_shoppage', {'page': p}) }}">{{ p }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  {% endblock %}

@@ -1,0 +1,125 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: fr
+    app.path.product_images: /uploads/images/products
+
+framework:
+    #esi:             ~
+    translator:      { fallbacks: ["%locale%"] }
+    secret:          "%secret%"
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: ~
+    form:            ~
+    csrf_protection: ~
+    validation:      { enable_annotations: true }
+    #serializer:      { enable_annotations: true }
+    templating:
+        engines: ['twig']
+    default_locale:  "%locale%"
+    trusted_hosts:   ~
+    trusted_proxies: ~
+    session:
+        # http://symfony.com/doc/current/reference/configuration/framework.html#handler-id
+        handler_id:  session.handler.native_file
+        save_path:   "%kernel.root_dir%/../var/sessions/%kernel.environment%"
+    fragments:       ~
+    http_method_override: true
+    assets: ~
+    php_errors:
+        log: true
+
+
+# Twig Configuration
+twig:
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
+    form_themes:
+      - 'bootstrap_3_layout.html.twig'
+    paths:
+            "%kernel.root_dir%": app
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver:   pdo_mysql
+        host:     "%database_host%"
+        port:     "%database_port%"
+        dbname:   "%database_name%"
+        user:     "%database_user%"
+        password: "%database_password%"
+        charset:  UTF8
+        # if using pdo_sqlite as your database driver:
+        #   1. add the path in parameters.yml
+        #     e.g. database_path: "%kernel.root_dir%/data/data.db3"
+        #   2. Uncomment database_path in parameters.yml.dist
+        #   3. Uncomment next line:
+        #     path:     "%database_path%"
+
+    orm:
+        auto_generate_proxy_classes: "%kernel.debug%"
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: true
+        mappings:
+            FOSUserBundle: ~
+            YZUserBundle: ~
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport: "%mailer_transport%"
+    host:      "%mailer_host%"
+    username:  "%mailer_user%"
+    password:  "%mailer_password%"
+    spool:     { type: memory }
+    stream_options:
+      ssl:
+        allow_self_signed: true
+        verify_peer: false
+        verify_peer_name: false
+
+assetic:
+  debug:          '%kernel.debug%'
+  use_controller: '%kernel.debug%'
+
+knp_snappy:
+    pdf:
+        enabled:    true
+        binary:     /usr/bin/xvfb-run /usr/bin/wkhtmltopdf
+        options:
+          encoding: UTF-8
+
+
+fos_user:
+  db_driver:      orm
+  firewall_name:  main
+  user_class:  YZ\UserBundle\Entity\User
+
+  registration:
+    form:
+      name: yz_user_registration
+      type: YZ\UserBundle\Form\Type\RegistrationFormType
+
+
+
+  from_email:
+    address: "yassine.zakari@hotmail.fr"
+    sender_name: "Yassine zakari"
+
+
+vich_uploader:
+    db_driver: orm
+    mappings:
+      product_images:
+        uri_prefix:         '%app.path.product_images%'
+        upload_destination: '%kernel.root_dir%/../web/uploads/images/products'
+        namer: vich_uploader.namer_uniqid
+stof_doctrine_extensions:
+    orm:
+        default:
+            sluggable: true

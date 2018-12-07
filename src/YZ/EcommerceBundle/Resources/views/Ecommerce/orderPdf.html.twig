@@ -1,0 +1,84 @@
+{% extends "YZEcommerceBundle::layout.html.twig" %}
+
+{% block title %}
+Panier - {{ parent() }}
+{% endblock %}
+{% block body %}
+
+
+<!-- Cart -->
+
+<div class="cart_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        {% for message in app.session.flashbag.get('success') %}
+          <div class="alert alert-success" role="alert">
+            {{ message }}
+          </div>
+        {% endfor %}
+        <div class="col-lg-6">
+          <h2>Devshop</h2>
+          <p>123, rue des écoles<br>
+          75003, Paris<br>
+          Devshop@contact.fr<br>
+          Tel 01 02 03 04 05<br>
+          Fax 01 02 03 04 05</p>
+        </div>
+          <div class="col-lg-6">
+            <h3>Facture</h3>
+            <p>Numéro de facture: {{order.reference}} <br>
+              Date de Facturation: {{order.dateCommande|localizeddate('none', 'none', null, null, 'd MMMM Y')}}
+            </p>
+            </div>
+            <div class="containerExpedition">
+            <div class="col-lg-6">
+              <h4>Facturer à:</h4>
+              <p>
+                {{order.user.nom}} {{order.user.prenom}}<br>
+                {{order.user.adresseFacturation}}<br>
+                {{order.user.email}}<br>
+              +33{{order.user.telephone}}<br>
+              </p>
+            </div>
+
+            <div class="col-lg-6">
+              <h4>Expédier à:</h4>
+              <p>
+                {{order.user.nom}} {{order.user.prenom}}<br>
+                {{order.user.adresseLivraison}}<br>
+                {{order.user.email}}<br>
+                +33{{order.user.telephone}}<br>
+              </p>
+            </div>
+            </div>
+            <table class="table table-striped">
+              <thead>
+                <tr class="table-primary">
+                  <th scope="col" class="text-center">Déscription</th>
+                </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <td class="text-right table-success">Montant TTC: {{order.amount}}€</td>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    {% for qte, key in order.qteProduct %}
+                    <tr>
+                    <td> {{key}} x {{qte}} <br> </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                  </table>
+          </div>
+          <div class="cart_buttons">
+            <a href="{{path('yz_ecommerce_pdf', {'id': order.id})}}"><button type="button" class="button cart_button_checkout">Téléchargement de la facture</button></a>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% block fos_user_content %}
+<div class="container">
+<div class="col-md-offset-1 col-md-10">
+  <h3 class="login_title" >Inscription</h3>
+{% include "@FOSUser/Registration/register_content.html.twig" %}
+</div>
+</div>
+{% endblock fos_user_content %}

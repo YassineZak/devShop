@@ -1,0 +1,10 @@
+{% set colors = field_options.label_colors|default(['primary']) %}
+{% for tag in item.roles %}
+{% if tag == 'ROLE_SUPER_ADMIN' %}
+  <span class="label label-danger">Administrateur</span>
+{% elseif tag == 'ROLE_USER' %}
+  <span class="label label-success">Utilisateur</span>
+{% else %}
+    <span class="label label-{{ cycle(colors, loop.index) }}">{{ tag }}</span>
+  {% endif %}
+{% endfor %}

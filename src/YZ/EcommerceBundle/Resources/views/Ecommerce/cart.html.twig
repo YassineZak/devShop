@@ -1,0 +1,100 @@
+{% extends "YZEcommerceBundle::layout.html.twig" %}
+
+{% block title %}
+Panier - {{ parent() }}
+{% endblock %}
+{% block body %}
+{% set totalTva = [] %}
+
+
+<!-- Cart -->
+
+<div class="cart_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="cart_container">
+          <div class="cart_title">Panier d'achat</div>
+          <div class="cart_items">
+            {% if app.session.get('panier') is empty %}
+
+                <div class="">
+                  Votre Panier est Vide !!
+                </div>
+                {% else %}
+                  <table id="cart_table" class="table">
+                    <thead class="thead-light">
+                      <tr>
+                        <th scope="col">Miniature</th>
+                        <th scope="col">Produit</th>
+                        <th scope="col">Quantitée</th>
+                        <th scope="col">Supprimer</th>
+                        <th scope="col">Prix Unitaire</th>
+                        <th scope="col">Prix Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                    {% for cartProduct in cartProducts %}
+                    <td class=" miniature">
+                      <a href="{{ path('yz_ecommerce_productpage', {'slug': cartProduct.slug}) }}">
+                     {% if app.environment == 'dev' %}
+                        <img src="/devshop/web{{ vich_uploader_asset(cartProduct, 'imageFile') }}" alt="">
+                     {% else %}
+                        <img src="{{ vich_uploader_asset(cartProduct, 'imageFile') }}" alt="">
+                     {% endif %}
+                      </a>
+                    </td>
+
+                    <td>{{cartProduct.titre}}</td>
+                    <td><form action="{{ path('yz_ecommerce_addcart', {'id': cartProduct.id}) }}" method="get">
+                      {% set qte = app.session.get('panier')[cartProduct.id] %}
+                      <div id="customSelect"class="form-group">
+                        <select id="selectCart" name="qte" onchange="submit()">
+                          {% for i in 1.. 9 %}
+                          {% if i == qte %}
+                          <option value="{{qte}}" selected style="display: none;">{{qte}}</option>
+                          {% endif %}
+                          <option value="{{i}}" {% if i == qte %}{% endif %}>{{i}}</option>
+                          {% endfor %}
+                        </select><i id="fontAwesome" class="fas fa-angle-down"></i>
+                      </div>
+                    </form></td>
+                    <td><a href="{{ path('yz_ecommerce_removecart', {'id': cartProduct.id}) }}"><i class="fas fa-trash-alt"></i></a></td>
+                    {% if cartProduct.promo is null %}
+                    <td>{{cartProduct.prixTtc}} €</td>
+                    <td>{{cartProduct.prixTtc * app.session.get('panier')[cartProduct.id]}} €</td>
+                    {% else %}
+                    <td>{{cartProduct.promoTtc}} €</td>
+                    <td>{{cartProduct.promoTtc * app.session.get('panier')[cartProduct.id]}} €</td>
+                    {% endif %}
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+                </div>
+            {% endif %}
+          </div>
+
+          <!-- Order Total -->
+          <div class="order_total">
+            <div class="order_total_content text-md-right">
+              <div class="order_total_title">Commande TTC:</div>
+              <div class="order_total_amount">{{sommePrix}} €<small class="tva"> dont {{sommeTva}} € de Tva </small></div>
+            </div>
+          </div>
+
+          <div class="cart_buttons">
+
+            <a href="{{ path('yz_ecommerce_shoppage')}}"><button type="button" class="button cart_button_clear">Continuer vos achats</button></a>
+            {% if app.session.get('panier') is empty %}
+            {% else %}
+            <a href="{{ path('yz_ecommerce_ordersummary')}}"><button type="button" class="button cart_button_checkout">Passer Commande</button></a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

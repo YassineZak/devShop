@@ -1,0 +1,5 @@
+{% if view == 'show' %}
+    {% autoescape false %}{{ value|nl2br }}{% endautoescape %}
+{% else %}
+  {% autoescape false %}  {{ value|easyadmin_truncate }}{% endautoescape %}
+{% endif %}

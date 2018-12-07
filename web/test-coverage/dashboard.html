@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /var/www/html/devshop/src/YZ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href=".css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href=".css/nv.d3.min.css" rel="stylesheet" type="text/css">
+  <link href=".css/style.css" rel="stylesheet" type="text/css">
+  <!--[if lt IE 9]>
+  <script src=".js/html5shiv.min.js"></script>
+  <script src=".js/respond.min.js"></script>
+  <![endif]-->
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a href="index.html">/var/www/html/devshop/src/YZ</a></li>
+        <li class="active">(Dashboard)</li>
+
+      </ol>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="ContactFormBundle/DependencyInjection/Configuration.php.html#13">YZ\ContactFormBundle\DependencyInjection\Configuration</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ContactFormBundle/DependencyInjection/YZContactFormExtension.php.html#15">YZ\ContactFormBundle\DependencyInjection\YZContactFormExtension</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/Entity/User.php.html#14">YZ\UserBundle\Entity\User</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/DependencyInjection/YZUserExtension.php.html#15">YZ\UserBundle\DependencyInjection\YZUserExtension</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/DependencyInjection/Configuration.php.html#13">YZ\UserBundle\DependencyInjection\Configuration</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/Controller/AdminController.php.html#7">YZ\UserBundle\Controller\AdminController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SearchBundle/DependencyInjection/YZSearchExtension.php.html#15">YZ\SearchBundle\DependencyInjection\YZSearchExtension</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SearchBundle/DependencyInjection/Configuration.php.html#13">YZ\SearchBundle\DependencyInjection\Configuration</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Repository/CommandeRepository.php.html#11">YZ\EcommerceBundle\Repository\CommandeRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/Form/Type/RegistrationFormType.php.html#9">YZ\UserBundle\Form\Type\RegistrationFormType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/DependencyInjection/YZEcommerceExtension.php.html#15">YZ\EcommerceBundle\DependencyInjection\YZEcommerceExtension</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Commande.php.html#13">YZ\EcommerceBundle\Entity\Commande</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/DependencyInjection/Configuration.php.html#13">YZ\EcommerceBundle\DependencyInjection\Configuration</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Controller/OrderController.php.html#14">YZ\EcommerceBundle\Controller\OrderController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SearchBundle/Controller/SearchController.php.html#13">YZ\SearchBundle\Controller\SearchController</a></td><td class="text-right">22%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#19">YZ\EcommerceBundle\Entity\Product</a></td><td class="text-right">36%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Tva.php.html#14">YZ\EcommerceBundle\Entity\Tva</a></td><td class="text-right">37%</td></tr>
+       <tr><td><a href="EcommerceBundle/Repository/ProductRepository.php.html#12">YZ\EcommerceBundle\Repository\ProductRepository</a></td><td class="text-right">56%</td></tr>
+       <tr><td><a href="EcommerceBundle/Extension/CategoryExtension.php.html#7">YZ\EcommerceBundle\Extension\CategoryExtension</a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="EcommerceBundle/Controller/EcommerceController.php.html#15">YZ\EcommerceBundle\Controller\EcommerceController</a></td><td class="text-right">70%</td></tr>
+       <tr><td><a href="ContactFormBundle/Form/ContactType.php.html#14">YZ\ContactFormBundle\Form\ContactType</a></td><td class="text-right">71%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Category.php.html#14">YZ\EcommerceBundle\Entity\Category</a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="EcommerceBundle/Extension/UserSommeProduitsExtension.php.html#8">YZ\EcommerceBundle\Extension\UserSommeProduitsExtension</a></td><td class="text-right">85%</td></tr>
+       <tr><td><a href="EcommerceBundle/Extension/UserSommePrixExtension.php.html#8">YZ\EcommerceBundle\Extension\UserSommePrixExtension</a></td><td class="text-right">85%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#19">YZ\EcommerceBundle\Entity\Product</a></td><td class="text-right">730</td></tr>
+       <tr><td><a href="EcommerceBundle/Controller/OrderController.php.html#14">YZ\EcommerceBundle\Controller\OrderController</a></td><td class="text-right">380</td></tr>
+       <tr><td><a href="EcommerceBundle/Controller/EcommerceController.php.html#15">YZ\EcommerceBundle\Controller\EcommerceController</a></td><td class="text-right">14</td></tr>
+       <tr><td><a href="EcommerceBundle/Extension/UserSommePrixExtension.php.html#8">YZ\EcommerceBundle\Extension\UserSommePrixExtension</a></td><td class="text-right">5</td></tr>
+       <tr><td><a href="EcommerceBundle/Extension/UserSommeProduitsExtension.php.html#8">YZ\EcommerceBundle\Extension\UserSommeProduitsExtension</a></td><td class="text-right">5</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="ContactFormBundle/DependencyInjection/Configuration.php.html#18"><abbr title="YZ\ContactFormBundle\DependencyInjection\Configuration::getConfigTreeBuilder">getConfigTreeBuilder</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Extension/CategoryExtension.php.html#45"><abbr title="YZ\EcommerceBundle\Extension\CategoryExtension::getName">getName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Repository/ProductRepository.php.html#42"><abbr title="YZ\EcommerceBundle\Repository\ProductRepository::getProductsByPrice">getProductsByPrice</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Repository/ProductRepository.php.html#21"><abbr title="YZ\EcommerceBundle\Repository\ProductRepository::findByCategory">findByCategory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Repository/CommandeRepository.php.html#28"><abbr title="YZ\EcommerceBundle\Repository\CommandeRepository::findOrder">findOrder</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Repository/CommandeRepository.php.html#20"><abbr title="YZ\EcommerceBundle\Repository\CommandeRepository::findOrderByUser">findOrderByUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Repository/CommandeRepository.php.html#13"><abbr title="YZ\EcommerceBundle\Repository\CommandeRepository::findLastCommande">findLastCommande</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Extension/UserSommeProduitsExtension.php.html#61"><abbr title="YZ\EcommerceBundle\Extension\UserSommeProduitsExtension::getName">getName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Extension/UserSommeProduitsExtension.php.html#30"><abbr title="YZ\EcommerceBundle\Extension\UserSommeProduitsExtension::getFunctions">getFunctions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Extension/UserSommePrixExtension.php.html#61"><abbr title="YZ\EcommerceBundle\Extension\UserSommePrixExtension::getName">getName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Extension/UserSommePrixExtension.php.html#30"><abbr title="YZ\EcommerceBundle\Extension\UserSommePrixExtension::getFunctions">getFunctions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Extension/CategoryExtension.php.html#23"><abbr title="YZ\EcommerceBundle\Extension\CategoryExtension::getFunctions">getFunctions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SearchBundle/Controller/SearchController.php.html#26"><abbr title="YZ\SearchBundle\Controller\SearchController::handleSearchAction">handleSearchAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Tva.php.html#103"><abbr title="YZ\EcommerceBundle\Entity\Tva::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Tva.php.html#69"><abbr title="YZ\EcommerceBundle\Entity\Tva::getName">getName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Tva.php.html#57"><abbr title="YZ\EcommerceBundle\Entity\Tva::setName">setName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Tva.php.html#45"><abbr title="YZ\EcommerceBundle\Entity\Tva::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#707"><abbr title="YZ\EcommerceBundle\Entity\Product::setPromoAvg">setPromoAvg</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#678"><abbr title="YZ\EcommerceBundle\Entity\Product::jsonSerialize">jsonSerialize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#556"><abbr title="YZ\EcommerceBundle\Entity\Product::setSlug">setSlug</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#518"><abbr title="YZ\EcommerceBundle\Entity\Product::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#497"><abbr title="YZ\EcommerceBundle\Entity\Product::setCategory">setCategory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#483"><abbr title="YZ\EcommerceBundle\Entity\Product::getImageFile3">getImageFile3</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Repository/ProductRepository.php.html#62"><abbr title="YZ\EcommerceBundle\Repository\ProductRepository::findByTerm">findByTerm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SearchBundle/Controller/SearchController.php.html#40"><abbr title="YZ\SearchBundle\Controller\SearchController::jsonResultSearchAction">jsonResultSearchAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#453"><abbr title="YZ\EcommerceBundle\Entity\Product::setImageProduit3">setImageProduit3</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/Entity/User.php.html#148"><abbr title="YZ\UserBundle\Entity\User::setTelephone">setTelephone</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/Form/Type/RegistrationFormType.php.html#22"><abbr title="YZ\UserBundle\Form\Type\RegistrationFormType::getParent">getParent</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/Form/Type/RegistrationFormType.php.html#11"><abbr title="YZ\UserBundle\Form\Type\RegistrationFormType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/Entity/User.php.html#243"><abbr title="YZ\UserBundle\Entity\User::getCommandes">getCommandes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/Entity/User.php.html#233"><abbr title="YZ\UserBundle\Entity\User::removeCommande">removeCommande</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/Entity/User.php.html#219"><abbr title="YZ\UserBundle\Entity\User::addCommande">addCommande</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/Entity/User.php.html#207"><abbr title="YZ\UserBundle\Entity\User::getAdresseFacturation">getAdresseFacturation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/Entity/User.php.html#195"><abbr title="YZ\UserBundle\Entity\User::setAdresseFacturation">setAdresseFacturation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/Entity/User.php.html#184"><abbr title="YZ\UserBundle\Entity\User::getAdresseLivraison">getAdresseLivraison</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/Entity/User.php.html#172"><abbr title="YZ\UserBundle\Entity\User::setAdresseLivraison">setAdresseLivraison</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/Entity/User.php.html#160"><abbr title="YZ\UserBundle\Entity\User::getTelephone">getTelephone</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/Entity/User.php.html#136"><abbr title="YZ\UserBundle\Entity\User::getFullName">getFullName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SearchBundle/DependencyInjection/Configuration.php.html#18"><abbr title="YZ\SearchBundle\DependencyInjection\Configuration::getConfigTreeBuilder">getConfigTreeBuilder</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/Entity/User.php.html#131"><abbr title="YZ\UserBundle\Entity\User::getPrenom">getPrenom</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/Entity/User.php.html#119"><abbr title="YZ\UserBundle\Entity\User::setPrenom">setPrenom</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/Entity/User.php.html#107"><abbr title="YZ\UserBundle\Entity\User::getNom">getNom</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/Entity/User.php.html#95"><abbr title="YZ\UserBundle\Entity\User::setNom">setNom</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/DependencyInjection/YZUserExtension.php.html#20"><abbr title="YZ\UserBundle\DependencyInjection\YZUserExtension::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/DependencyInjection/Configuration.php.html#18"><abbr title="YZ\UserBundle\DependencyInjection\Configuration::getConfigTreeBuilder">getConfigTreeBuilder</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/Controller/AdminController.php.html#19"><abbr title="YZ\UserBundle\Controller\AdminController::preUpdateUserEntity">preUpdateUserEntity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/Controller/AdminController.php.html#14"><abbr title="YZ\UserBundle\Controller\AdminController::prePersistUserEntity">prePersistUserEntity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/Controller/AdminController.php.html#9"><abbr title="YZ\UserBundle\Controller\AdminController::createNewUserEntity">createNewUserEntity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SearchBundle/DependencyInjection/YZSearchExtension.php.html#20"><abbr title="YZ\SearchBundle\DependencyInjection\YZSearchExtension::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#470"><abbr title="YZ\EcommerceBundle\Entity\Product::setImageFile3">setImageFile3</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#440"><abbr title="YZ\EcommerceBundle\Entity\Product::getImageFile2">getImageFile2</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ContactFormBundle/DependencyInjection/YZContactFormExtension.php.html#20"><abbr title="YZ\ContactFormBundle\DependencyInjection\YZContactFormExtension::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/DependencyInjection/YZEcommerceExtension.php.html#20"><abbr title="YZ\EcommerceBundle\DependencyInjection\YZEcommerceExtension::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Commande.php.html#129"><abbr title="YZ\EcommerceBundle\Entity\Commande::getDateCommande">getDateCommande</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Commande.php.html#117"><abbr title="YZ\EcommerceBundle\Entity\Commande::setDateCommande">setDateCommande</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Commande.php.html#105"><abbr title="YZ\EcommerceBundle\Entity\Commande::getReference">getReference</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Commande.php.html#93"><abbr title="YZ\EcommerceBundle\Entity\Commande::setReference">setReference</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Commande.php.html#81"><abbr title="YZ\EcommerceBundle\Entity\Commande::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Commande.php.html#16"><abbr title="YZ\EcommerceBundle\Entity\Commande::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Category.php.html#78"><abbr title="YZ\EcommerceBundle\Entity\Category::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Category.php.html#45"><abbr title="YZ\EcommerceBundle\Entity\Category::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/DependencyInjection/Configuration.php.html#18"><abbr title="YZ\EcommerceBundle\DependencyInjection\Configuration::getConfigTreeBuilder">getConfigTreeBuilder</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Commande.php.html#154"><abbr title="YZ\EcommerceBundle\Entity\Commande::getProducts">getProducts</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Controller/OrderController.php.html#144"><abbr title="YZ\EcommerceBundle\Controller\OrderController::pdfAction">pdfAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Controller/OrderController.php.html#128"><abbr title="YZ\EcommerceBundle\Controller\OrderController::orderPdfAction">orderPdfAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Controller/OrderController.php.html#121"><abbr title="YZ\EcommerceBundle\Controller\OrderController::userOrdersAction">userOrdersAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Controller/OrderController.php.html#45"><abbr title="YZ\EcommerceBundle\Controller\OrderController::checkoutAction">checkoutAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Controller/OrderController.php.html#41"><abbr title="YZ\EcommerceBundle\Controller\OrderController::paymentAction">paymentAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Controller/OrderController.php.html#16"><abbr title="YZ\EcommerceBundle\Controller\OrderController::summaryAction">summaryAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Controller/EcommerceController.php.html#59"><abbr title="YZ\EcommerceBundle\Controller\EcommerceController::categoryAction">categoryAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ContactFormBundle/Form/ContactType.php.html#50"><abbr title="YZ\ContactFormBundle\Form\ContactType::getName">getName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ContactFormBundle/Form/ContactType.php.html#43"><abbr title="YZ\ContactFormBundle\Form\ContactType::setDefaultOptions">setDefaultOptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#427"><abbr title="YZ\EcommerceBundle\Entity\Product::setImageFile2">setImageFile2</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Commande.php.html#142"><abbr title="YZ\EcommerceBundle\Entity\Commande::setProducts">setProducts</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Commande.php.html#166"><abbr title="YZ\EcommerceBundle\Entity\Commande::setValidation">setValidation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#295"><abbr title="YZ\EcommerceBundle\Entity\Product::setDateCreation">setDateCreation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#410"><abbr title="YZ\EcommerceBundle\Entity\Product::setImageProduit2">setImageProduit2</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#397"><abbr title="YZ\EcommerceBundle\Entity\Product::getImageFile">getImageFile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#384"><abbr title="YZ\EcommerceBundle\Entity\Product::setImageFile">setImageFile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#367"><abbr title="YZ\EcommerceBundle\Entity\Product::setImageProduit">setImageProduit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#355"><abbr title="YZ\EcommerceBundle\Entity\Product::getReference">getReference</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#343"><abbr title="YZ\EcommerceBundle\Entity\Product::setReference">setReference</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#331"><abbr title="YZ\EcommerceBundle\Entity\Product::getStock">getStock</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#319"><abbr title="YZ\EcommerceBundle\Entity\Product::setStock">setStock</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Commande.php.html#178"><abbr title="YZ\EcommerceBundle\Entity\Commande::getValidation">getValidation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#307"><abbr title="YZ\EcommerceBundle\Entity\Product::getDateCreation">getDateCreation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#237"><abbr title="YZ\EcommerceBundle\Entity\Product::setDescription">setDescription</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#225"><abbr title="YZ\EcommerceBundle\Entity\Product::getResume">getResume</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#206"><abbr title="YZ\EcommerceBundle\Entity\Product::setResume">setResume</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#182"><abbr title="YZ\EcommerceBundle\Entity\Product::setTitre">setTitre</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Commande.php.html#250"><abbr title="YZ\EcommerceBundle\Entity\Commande::getQteProduct">getQteProduct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Commande.php.html#238"><abbr title="YZ\EcommerceBundle\Entity\Commande::setQteProduct">setQteProduct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Commande.php.html#226"><abbr title="YZ\EcommerceBundle\Entity\Commande::getAmount">getAmount</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Commande.php.html#214"><abbr title="YZ\EcommerceBundle\Entity\Commande::setAmount">setAmount</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Commande.php.html#202"><abbr title="YZ\EcommerceBundle\Entity\Commande::getUser">getUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Commande.php.html#190"><abbr title="YZ\EcommerceBundle\Entity\Commande::setUser">setUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserBundle/Form/Type/RegistrationFormType.php.html#27"><abbr title="YZ\UserBundle\Form\Type\RegistrationFormType::getName">getName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EcommerceBundle/Controller/CartController.php.html#58"><abbr title="YZ\EcommerceBundle\Controller\CartController::removeCartAction">removeCartAction</abbr></a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="EcommerceBundle/Controller/EcommerceController.php.html#71"><abbr title="YZ\EcommerceBundle\Controller\EcommerceController::promoAction">promoAction</abbr></a></td><td class="text-right">81%</td></tr>
+       <tr><td><a href="EcommerceBundle/Controller/EcommerceController.php.html#27"><abbr title="YZ\EcommerceBundle\Controller\EcommerceController::shopAction">shopAction</abbr></a></td><td class="text-right">81%</td></tr>
+       <tr><td><a href="EcommerceBundle/Controller/EcommerceController.php.html#46"><abbr title="YZ\EcommerceBundle\Controller\EcommerceController::productAction">productAction</abbr></a></td><td class="text-right">85%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="EcommerceBundle/Controller/OrderController.php.html#45"><abbr title="YZ\EcommerceBundle\Controller\OrderController::checkoutAction">checkoutAction</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="EcommerceBundle/Controller/OrderController.php.html#16"><abbr title="YZ\EcommerceBundle\Controller\OrderController::summaryAction">summaryAction</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="EcommerceBundle/Controller/OrderController.php.html#128"><abbr title="YZ\EcommerceBundle\Controller\OrderController::orderPdfAction">orderPdfAction</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="EcommerceBundle/Controller/OrderController.php.html#144"><abbr title="YZ\EcommerceBundle\Controller\OrderController::pdfAction">pdfAction</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="EcommerceBundle/Controller/EcommerceController.php.html#59"><abbr title="YZ\EcommerceBundle\Controller\EcommerceController::categoryAction">categoryAction</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#384"><abbr title="YZ\EcommerceBundle\Entity\Product::setImageFile">setImageFile</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#427"><abbr title="YZ\EcommerceBundle\Entity\Product::setImageFile2">setImageFile2</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#470"><abbr title="YZ\EcommerceBundle\Entity\Product::setImageFile3">setImageFile3</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="EcommerceBundle/Entity/Product.php.html#707"><abbr title="YZ\EcommerceBundle\Entity\Product::setPromoAvg">setPromoAvg</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="EcommerceBundle/Controller/EcommerceController.php.html#27"><abbr title="YZ\EcommerceBundle\Controller\EcommerceController::shopAction">shopAction</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="EcommerceBundle/Controller/EcommerceController.php.html#71"><abbr title="YZ\EcommerceBundle\Controller\EcommerceController::promoAction">promoAction</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="EcommerceBundle/Controller/CartController.php.html#58"><abbr title="YZ\EcommerceBundle\Controller\CartController::removeCartAction">removeCartAction</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="EcommerceBundle/Controller/EcommerceController.php.html#46"><abbr title="YZ\EcommerceBundle\Controller\EcommerceController::productAction">productAction</abbr></a></td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 5.3.2</a> using <a href="https://secure.php.net/" target="_top">PHP 7.2.7-0ubuntu0.18.04.2</a> with <a href="https://xdebug.org/">Xdebug 2.6.0</a> and <a href="https://phpunit.de/">PHPUnit 6.5.9</a> at Sat Aug 4 12:21:50 CEST 2018.</small>
+    </p>
+   </footer>
+  </div>
+  <script src=".js/jquery.min.js" type="text/javascript"></script>
+  <script src=".js/bootstrap.min.js" type="text/javascript"></script>
+  <script src=".js/holder.min.js" type="text/javascript"></script>
+  <script src=".js/d3.min.js" type="text/javascript"></script>
+  <script src=".js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([14,0,0,1,2,0,1,1,3,2,3,10], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([97,0,0,0,0,0,0,1,0,3,3,46], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[95.83333333333334,5,"<a href=\"ContactFormBundle\/Controller\/ContactController.php.html#8\">YZ\\ContactFormBundle\\Controller\\ContactController<\/a>"],[0,1,"<a href=\"ContactFormBundle\/DependencyInjection\/Configuration.php.html#13\">YZ\\ContactFormBundle\\DependencyInjection\\Configuration<\/a>"],[0,1,"<a href=\"ContactFormBundle\/DependencyInjection\/YZContactFormExtension.php.html#15\">YZ\\ContactFormBundle\\DependencyInjection\\YZContactFormExtension<\/a>"],[71.42857142857143,3,"<a href=\"ContactFormBundle\/Form\/ContactType.php.html#14\">YZ\\ContactFormBundle\\Form\\ContactType<\/a>"],[100,0,"<a href=\"ContactFormBundle\/YZContactFormBundle.php.html#7\">YZ\\ContactFormBundle\\YZContactFormBundle<\/a>"],[91.17647058823529,8,"<a href=\"EcommerceBundle\/Controller\/CartController.php.html#10\">YZ\\EcommerceBundle\\Controller\\CartController<\/a>"],[100,0,"<a href=\"EcommerceBundle\/Controller\/EcommerceAdminController.php.html#10\">YZ\\EcommerceBundle\\Controller\\EcommerceAdminController<\/a>"],[70.73170731707317,11,"<a href=\"EcommerceBundle\/Controller\/EcommerceController.php.html#15\">YZ\\EcommerceBundle\\Controller\\EcommerceController<\/a>"],[0,19,"<a href=\"EcommerceBundle\/Controller\/OrderController.php.html#14\">YZ\\EcommerceBundle\\Controller\\OrderController<\/a>"],[0,1,"<a href=\"EcommerceBundle\/DependencyInjection\/Configuration.php.html#13\">YZ\\EcommerceBundle\\DependencyInjection\\Configuration<\/a>"],[0,1,"<a href=\"EcommerceBundle\/DependencyInjection\/YZEcommerceExtension.php.html#15\">YZ\\EcommerceBundle\\DependencyInjection\\YZEcommerceExtension<\/a>"],[75,6,"<a href=\"EcommerceBundle\/Entity\/Category.php.html#14\">YZ\\EcommerceBundle\\Entity\\Category<\/a>"],[0,16,"<a href=\"EcommerceBundle\/Entity\/Commande.php.html#13\">YZ\\EcommerceBundle\\Entity\\Commande<\/a>"],[36.08247422680412,51,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#19\">YZ\\EcommerceBundle\\Entity\\Product<\/a>"],[37.5,6,"<a href=\"EcommerceBundle\/Entity\/Tva.php.html#14\">YZ\\EcommerceBundle\\Entity\\Tva<\/a>"],[66.66666666666666,4,"<a href=\"EcommerceBundle\/Extension\/CategoryExtension.php.html#7\">YZ\\EcommerceBundle\\Extension\\CategoryExtension<\/a>"],[90,3,"<a href=\"EcommerceBundle\/Extension\/SommePrix.php.html#10\">YZ\\EcommerceBundle\\Extension\\SommePrix<\/a>"],[100,2,"<a href=\"EcommerceBundle\/Extension\/SommeProduits.php.html#10\">YZ\\EcommerceBundle\\Extension\\SommeProduits<\/a>"],[100,2,"<a href=\"EcommerceBundle\/Extension\/SommeTva.php.html#10\">YZ\\EcommerceBundle\\Extension\\SommeTva<\/a>"],[85.71428571428571,5,"<a href=\"EcommerceBundle\/Extension\/UserSommePrixExtension.php.html#8\">YZ\\EcommerceBundle\\Extension\\UserSommePrixExtension<\/a>"],[85.71428571428571,5,"<a href=\"EcommerceBundle\/Extension\/UserSommeProduitsExtension.php.html#8\">YZ\\EcommerceBundle\\Extension\\UserSommeProduitsExtension<\/a>"],[100,0,"<a href=\"EcommerceBundle\/Repository\/CategoryRepository.php.html#11\">YZ\\EcommerceBundle\\Repository\\CategoryRepository<\/a>"],[0,3,"<a href=\"EcommerceBundle\/Repository\/CommandeRepository.php.html#11\">YZ\\EcommerceBundle\\Repository\\CommandeRepository<\/a>"],[56.25,7,"<a href=\"EcommerceBundle\/Repository\/ProductRepository.php.html#12\">YZ\\EcommerceBundle\\Repository\\ProductRepository<\/a>"],[100,0,"<a href=\"EcommerceBundle\/Repository\/TvaRepository.php.html#11\">YZ\\EcommerceBundle\\Repository\\TvaRepository<\/a>"],[100,0,"<a href=\"EcommerceBundle\/YZEcommerceBundle.php.html#7\">YZ\\EcommerceBundle\\YZEcommerceBundle<\/a>"],[22.22222222222222,3,"<a href=\"SearchBundle\/Controller\/SearchController.php.html#13\">YZ\\SearchBundle\\Controller\\SearchController<\/a>"],[0,1,"<a href=\"SearchBundle\/DependencyInjection\/Configuration.php.html#13\">YZ\\SearchBundle\\DependencyInjection\\Configuration<\/a>"],[0,1,"<a href=\"SearchBundle\/DependencyInjection\/YZSearchExtension.php.html#15\">YZ\\SearchBundle\\DependencyInjection\\YZSearchExtension<\/a>"],[100,0,"<a href=\"SearchBundle\/YZSearchBundle.php.html#7\">YZ\\SearchBundle\\YZSearchBundle<\/a>"],[0,3,"<a href=\"UserBundle\/Controller\/AdminController.php.html#7\">YZ\\UserBundle\\Controller\\AdminController<\/a>"],[0,1,"<a href=\"UserBundle\/DependencyInjection\/Configuration.php.html#13\">YZ\\UserBundle\\DependencyInjection\\Configuration<\/a>"],[0,1,"<a href=\"UserBundle\/DependencyInjection\/YZUserExtension.php.html#15\">YZ\\UserBundle\\DependencyInjection\\YZUserExtension<\/a>"],[0,14,"<a href=\"UserBundle\/Entity\/User.php.html#14\">YZ\\UserBundle\\Entity\\User<\/a>"],[0,3,"<a href=\"UserBundle\/Form\/Type\/RegistrationFormType.php.html#9\">YZ\\UserBundle\\Form\\Type\\RegistrationFormType<\/a>"],[100,0,"<a href=\"UserBundle\/Repository\/UserRepository.php.html#11\">YZ\\UserBundle\\Repository\\UserRepository<\/a>"],[100,1,"<a href=\"UserBundle\/YZUserBundle.php.html#7\">YZ\\UserBundle\\YZUserBundle<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[91.66666666666666,4,"<a href=\"ContactFormBundle\/Controller\/ContactController.php.html#10\">YZ\\ContactFormBundle\\Controller\\ContactController::formAction<\/a>"],[100,1,"<a href=\"ContactFormBundle\/Controller\/ContactController.php.html#42\">YZ\\ContactFormBundle\\Controller\\ContactController::sendEmail<\/a>"],[0,1,"<a href=\"ContactFormBundle\/DependencyInjection\/Configuration.php.html#18\">YZ\\ContactFormBundle\\DependencyInjection\\Configuration::getConfigTreeBuilder<\/a>"],[0,1,"<a href=\"ContactFormBundle\/DependencyInjection\/YZContactFormExtension.php.html#20\">YZ\\ContactFormBundle\\DependencyInjection\\YZContactFormExtension::load<\/a>"],[100,1,"<a href=\"ContactFormBundle\/Form\/ContactType.php.html#16\">YZ\\ContactFormBundle\\Form\\ContactType::buildForm<\/a>"],[0,1,"<a href=\"ContactFormBundle\/Form\/ContactType.php.html#43\">YZ\\ContactFormBundle\\Form\\ContactType::setDefaultOptions<\/a>"],[0,1,"<a href=\"ContactFormBundle\/Form\/ContactType.php.html#50\">YZ\\ContactFormBundle\\Form\\ContactType::getName<\/a>"],[100,3,"<a href=\"EcommerceBundle\/Controller\/CartController.php.html#12\">YZ\\EcommerceBundle\\Controller\\CartController::cartAction<\/a>"],[90.9090909090909,3,"<a href=\"EcommerceBundle\/Controller\/CartController.php.html#39\">YZ\\EcommerceBundle\\Controller\\CartController::addToCartAction<\/a>"],[66.66666666666666,2,"<a href=\"EcommerceBundle\/Controller\/CartController.php.html#58\">YZ\\EcommerceBundle\\Controller\\CartController::removeCartAction<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Controller\/EcommerceController.php.html#17\">YZ\\EcommerceBundle\\Controller\\EcommerceController::indexAction<\/a>"],[81.81818181818183,3,"<a href=\"EcommerceBundle\/Controller\/EcommerceController.php.html#27\">YZ\\EcommerceBundle\\Controller\\EcommerceController::shopAction<\/a>"],[85.71428571428571,2,"<a href=\"EcommerceBundle\/Controller\/EcommerceController.php.html#46\">YZ\\EcommerceBundle\\Controller\\EcommerceController::productAction<\/a>"],[0,2,"<a href=\"EcommerceBundle\/Controller\/EcommerceController.php.html#59\">YZ\\EcommerceBundle\\Controller\\EcommerceController::categoryAction<\/a>"],[81.81818181818183,3,"<a href=\"EcommerceBundle\/Controller\/EcommerceController.php.html#71\">YZ\\EcommerceBundle\\Controller\\EcommerceController::promoAction<\/a>"],[0,3,"<a href=\"EcommerceBundle\/Controller\/OrderController.php.html#16\">YZ\\EcommerceBundle\\Controller\\OrderController::summaryAction<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Controller\/OrderController.php.html#41\">YZ\\EcommerceBundle\\Controller\\OrderController::paymentAction<\/a>"],[0,8,"<a href=\"EcommerceBundle\/Controller\/OrderController.php.html#45\">YZ\\EcommerceBundle\\Controller\\OrderController::checkoutAction<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Controller\/OrderController.php.html#121\">YZ\\EcommerceBundle\\Controller\\OrderController::userOrdersAction<\/a>"],[0,3,"<a href=\"EcommerceBundle\/Controller\/OrderController.php.html#128\">YZ\\EcommerceBundle\\Controller\\OrderController::orderPdfAction<\/a>"],[0,3,"<a href=\"EcommerceBundle\/Controller\/OrderController.php.html#144\">YZ\\EcommerceBundle\\Controller\\OrderController::pdfAction<\/a>"],[0,1,"<a href=\"EcommerceBundle\/DependencyInjection\/Configuration.php.html#18\">YZ\\EcommerceBundle\\DependencyInjection\\Configuration::getConfigTreeBuilder<\/a>"],[0,1,"<a href=\"EcommerceBundle\/DependencyInjection\/YZEcommerceExtension.php.html#20\">YZ\\EcommerceBundle\\DependencyInjection\\YZEcommerceExtension::load<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Category.php.html#45\">YZ\\EcommerceBundle\\Entity\\Category::getId<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Category.php.html#57\">YZ\\EcommerceBundle\\Entity\\Category::setName<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Category.php.html#69\">YZ\\EcommerceBundle\\Entity\\Category::getName<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Category.php.html#78\">YZ\\EcommerceBundle\\Entity\\Category::__toString<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Category.php.html#90\">YZ\\EcommerceBundle\\Entity\\Category::setSlug<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Category.php.html#102\">YZ\\EcommerceBundle\\Entity\\Category::getSlug<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Commande.php.html#16\">YZ\\EcommerceBundle\\Entity\\Commande::__construct<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Commande.php.html#81\">YZ\\EcommerceBundle\\Entity\\Commande::getId<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Commande.php.html#93\">YZ\\EcommerceBundle\\Entity\\Commande::setReference<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Commande.php.html#105\">YZ\\EcommerceBundle\\Entity\\Commande::getReference<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Commande.php.html#117\">YZ\\EcommerceBundle\\Entity\\Commande::setDateCommande<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Commande.php.html#129\">YZ\\EcommerceBundle\\Entity\\Commande::getDateCommande<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Commande.php.html#142\">YZ\\EcommerceBundle\\Entity\\Commande::setProducts<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Commande.php.html#154\">YZ\\EcommerceBundle\\Entity\\Commande::getProducts<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Commande.php.html#166\">YZ\\EcommerceBundle\\Entity\\Commande::setValidation<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Commande.php.html#178\">YZ\\EcommerceBundle\\Entity\\Commande::getValidation<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Commande.php.html#190\">YZ\\EcommerceBundle\\Entity\\Commande::setUser<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Commande.php.html#202\">YZ\\EcommerceBundle\\Entity\\Commande::getUser<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Commande.php.html#214\">YZ\\EcommerceBundle\\Entity\\Commande::setAmount<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Commande.php.html#226\">YZ\\EcommerceBundle\\Entity\\Commande::getAmount<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Commande.php.html#238\">YZ\\EcommerceBundle\\Entity\\Commande::setQteProduct<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Commande.php.html#250\">YZ\\EcommerceBundle\\Entity\\Commande::getQteProduct<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#170\">YZ\\EcommerceBundle\\Entity\\Product::getId<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#182\">YZ\\EcommerceBundle\\Entity\\Product::setTitre<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#194\">YZ\\EcommerceBundle\\Entity\\Product::getTitre<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#206\">YZ\\EcommerceBundle\\Entity\\Product::setResume<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#225\">YZ\\EcommerceBundle\\Entity\\Product::getResume<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#237\">YZ\\EcommerceBundle\\Entity\\Product::setDescription<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#249\">YZ\\EcommerceBundle\\Entity\\Product::getDescription<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#261\">YZ\\EcommerceBundle\\Entity\\Product::setPrix<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#273\">YZ\\EcommerceBundle\\Entity\\Product::getPrix<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#278\">YZ\\EcommerceBundle\\Entity\\Product::__construct<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#295\">YZ\\EcommerceBundle\\Entity\\Product::setDateCreation<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#307\">YZ\\EcommerceBundle\\Entity\\Product::getDateCreation<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#319\">YZ\\EcommerceBundle\\Entity\\Product::setStock<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#331\">YZ\\EcommerceBundle\\Entity\\Product::getStock<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#343\">YZ\\EcommerceBundle\\Entity\\Product::setReference<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#355\">YZ\\EcommerceBundle\\Entity\\Product::getReference<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#367\">YZ\\EcommerceBundle\\Entity\\Product::setImageProduit<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#379\">YZ\\EcommerceBundle\\Entity\\Product::getImageProduit<\/a>"],[0,2,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#384\">YZ\\EcommerceBundle\\Entity\\Product::setImageFile<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#397\">YZ\\EcommerceBundle\\Entity\\Product::getImageFile<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#410\">YZ\\EcommerceBundle\\Entity\\Product::setImageProduit2<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#422\">YZ\\EcommerceBundle\\Entity\\Product::getImageProduit2<\/a>"],[0,2,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#427\">YZ\\EcommerceBundle\\Entity\\Product::setImageFile2<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#440\">YZ\\EcommerceBundle\\Entity\\Product::getImageFile2<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#453\">YZ\\EcommerceBundle\\Entity\\Product::setImageProduit3<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#465\">YZ\\EcommerceBundle\\Entity\\Product::getImageProduit3<\/a>"],[0,2,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#470\">YZ\\EcommerceBundle\\Entity\\Product::setImageFile3<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#483\">YZ\\EcommerceBundle\\Entity\\Product::getImageFile3<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#497\">YZ\\EcommerceBundle\\Entity\\Product::setCategory<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#509\">YZ\\EcommerceBundle\\Entity\\Product::getCategory<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#518\">YZ\\EcommerceBundle\\Entity\\Product::__toString<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#532\">YZ\\EcommerceBundle\\Entity\\Product::setPromo<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#544\">YZ\\EcommerceBundle\\Entity\\Product::getPromo<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#556\">YZ\\EcommerceBundle\\Entity\\Product::setSlug<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#568\">YZ\\EcommerceBundle\\Entity\\Product::getSlug<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#580\">YZ\\EcommerceBundle\\Entity\\Product::setTva<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#592\">YZ\\EcommerceBundle\\Entity\\Product::getTva<\/a>"],[100,2,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#604\">YZ\\EcommerceBundle\\Entity\\Product::setPrixTva<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#624\">YZ\\EcommerceBundle\\Entity\\Product::getPrixTva<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#635\">YZ\\EcommerceBundle\\Entity\\Product::getPrixTtc<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#649\">YZ\\EcommerceBundle\\Entity\\Product::setPromoTtc<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#661\">YZ\\EcommerceBundle\\Entity\\Product::getPromoTtc<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#671\">YZ\\EcommerceBundle\\Entity\\Product::setPrixTtc<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#678\">YZ\\EcommerceBundle\\Entity\\Product::jsonSerialize<\/a>"],[0,2,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#707\">YZ\\EcommerceBundle\\Entity\\Product::setPromoAvg<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Product.php.html#725\">YZ\\EcommerceBundle\\Entity\\Product::getPromoAvg<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Tva.php.html#45\">YZ\\EcommerceBundle\\Entity\\Tva::getId<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Tva.php.html#57\">YZ\\EcommerceBundle\\Entity\\Tva::setName<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Tva.php.html#69\">YZ\\EcommerceBundle\\Entity\\Tva::getName<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Tva.php.html#81\">YZ\\EcommerceBundle\\Entity\\Tva::setMultiplicate<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Entity\/Tva.php.html#95\">YZ\\EcommerceBundle\\Entity\\Tva::getMultiplicate<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Entity\/Tva.php.html#103\">YZ\\EcommerceBundle\\Entity\\Tva::__toString<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Extension\/CategoryExtension.php.html#15\">YZ\\EcommerceBundle\\Extension\\CategoryExtension::__construct<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Extension\/CategoryExtension.php.html#23\">YZ\\EcommerceBundle\\Extension\\CategoryExtension::getFunctions<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Extension\/CategoryExtension.php.html#33\">YZ\\EcommerceBundle\\Extension\\CategoryExtension::getCategories<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Extension\/CategoryExtension.php.html#45\">YZ\\EcommerceBundle\\Extension\\CategoryExtension::getName<\/a>"],[90,3,"<a href=\"EcommerceBundle\/Extension\/SommePrix.php.html#13\">YZ\\EcommerceBundle\\Extension\\SommePrix::somme<\/a>"],[100,2,"<a href=\"EcommerceBundle\/Extension\/SommeProduits.php.html#13\">YZ\\EcommerceBundle\\Extension\\SommeProduits::somme<\/a>"],[100,2,"<a href=\"EcommerceBundle\/Extension\/SommeTva.php.html#13\">YZ\\EcommerceBundle\\Extension\\SommeTva::somme<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Extension\/UserSommePrixExtension.php.html#20\">YZ\\EcommerceBundle\\Extension\\UserSommePrixExtension::__construct<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Extension\/UserSommePrixExtension.php.html#30\">YZ\\EcommerceBundle\\Extension\\UserSommePrixExtension::getFunctions<\/a>"],[100,2,"<a href=\"EcommerceBundle\/Extension\/UserSommePrixExtension.php.html#40\">YZ\\EcommerceBundle\\Extension\\UserSommePrixExtension::getMySommePrix<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Extension\/UserSommePrixExtension.php.html#61\">YZ\\EcommerceBundle\\Extension\\UserSommePrixExtension::getName<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Extension\/UserSommeProduitsExtension.php.html#20\">YZ\\EcommerceBundle\\Extension\\UserSommeProduitsExtension::__construct<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Extension\/UserSommeProduitsExtension.php.html#30\">YZ\\EcommerceBundle\\Extension\\UserSommeProduitsExtension::getFunctions<\/a>"],[100,2,"<a href=\"EcommerceBundle\/Extension\/UserSommeProduitsExtension.php.html#40\">YZ\\EcommerceBundle\\Extension\\UserSommeProduitsExtension::getMySommeProduits<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Extension\/UserSommeProduitsExtension.php.html#61\">YZ\\EcommerceBundle\\Extension\\UserSommeProduitsExtension::getName<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Repository\/CommandeRepository.php.html#13\">YZ\\EcommerceBundle\\Repository\\CommandeRepository::findLastCommande<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Repository\/CommandeRepository.php.html#20\">YZ\\EcommerceBundle\\Repository\\CommandeRepository::findOrderByUser<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Repository\/CommandeRepository.php.html#28\">YZ\\EcommerceBundle\\Repository\\CommandeRepository::findOrder<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Repository\/ProductRepository.php.html#14\">YZ\\EcommerceBundle\\Repository\\ProductRepository::findProduct<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Repository\/ProductRepository.php.html#21\">YZ\\EcommerceBundle\\Repository\\ProductRepository::findByCategory<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Repository\/ProductRepository.php.html#30\">YZ\\EcommerceBundle\\Repository\\ProductRepository::getProducts<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Repository\/ProductRepository.php.html#42\">YZ\\EcommerceBundle\\Repository\\ProductRepository::getProductsByPrice<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Repository\/ProductRepository.php.html#54\">YZ\\EcommerceBundle\\Repository\\ProductRepository::findByArray<\/a>"],[0,1,"<a href=\"EcommerceBundle\/Repository\/ProductRepository.php.html#62\">YZ\\EcommerceBundle\\Repository\\ProductRepository::findByTerm<\/a>"],[100,1,"<a href=\"EcommerceBundle\/Repository\/ProductRepository.php.html#71\">YZ\\EcommerceBundle\\Repository\\ProductRepository::getProductsPromo<\/a>"],[100,1,"<a href=\"SearchBundle\/Controller\/SearchController.php.html#15\">YZ\\SearchBundle\\Controller\\SearchController::searchBarAction<\/a>"],[0,1,"<a href=\"SearchBundle\/Controller\/SearchController.php.html#26\">YZ\\SearchBundle\\Controller\\SearchController::handleSearchAction<\/a>"],[0,1,"<a href=\"SearchBundle\/Controller\/SearchController.php.html#40\">YZ\\SearchBundle\\Controller\\SearchController::jsonResultSearchAction<\/a>"],[0,1,"<a href=\"SearchBundle\/DependencyInjection\/Configuration.php.html#18\">YZ\\SearchBundle\\DependencyInjection\\Configuration::getConfigTreeBuilder<\/a>"],[0,1,"<a href=\"SearchBundle\/DependencyInjection\/YZSearchExtension.php.html#20\">YZ\\SearchBundle\\DependencyInjection\\YZSearchExtension::load<\/a>"],[0,1,"<a href=\"UserBundle\/Controller\/AdminController.php.html#9\">YZ\\UserBundle\\Controller\\AdminController::createNewUserEntity<\/a>"],[0,1,"<a href=\"UserBundle\/Controller\/AdminController.php.html#14\">YZ\\UserBundle\\Controller\\AdminController::prePersistUserEntity<\/a>"],[0,1,"<a href=\"UserBundle\/Controller\/AdminController.php.html#19\">YZ\\UserBundle\\Controller\\AdminController::preUpdateUserEntity<\/a>"],[0,1,"<a href=\"UserBundle\/DependencyInjection\/Configuration.php.html#18\">YZ\\UserBundle\\DependencyInjection\\Configuration::getConfigTreeBuilder<\/a>"],[0,1,"<a href=\"UserBundle\/DependencyInjection\/YZUserExtension.php.html#20\">YZ\\UserBundle\\DependencyInjection\\YZUserExtension::load<\/a>"],[0,1,"<a href=\"UserBundle\/Entity\/User.php.html#95\">YZ\\UserBundle\\Entity\\User::setNom<\/a>"],[0,1,"<a href=\"UserBundle\/Entity\/User.php.html#107\">YZ\\UserBundle\\Entity\\User::getNom<\/a>"],[0,1,"<a href=\"UserBundle\/Entity\/User.php.html#119\">YZ\\UserBundle\\Entity\\User::setPrenom<\/a>"],[0,1,"<a href=\"UserBundle\/Entity\/User.php.html#131\">YZ\\UserBundle\\Entity\\User::getPrenom<\/a>"],[0,1,"<a href=\"UserBundle\/Entity\/User.php.html#136\">YZ\\UserBundle\\Entity\\User::getFullName<\/a>"],[0,1,"<a href=\"UserBundle\/Entity\/User.php.html#148\">YZ\\UserBundle\\Entity\\User::setTelephone<\/a>"],[0,1,"<a href=\"UserBundle\/Entity\/User.php.html#160\">YZ\\UserBundle\\Entity\\User::getTelephone<\/a>"],[0,1,"<a href=\"UserBundle\/Entity\/User.php.html#172\">YZ\\UserBundle\\Entity\\User::setAdresseLivraison<\/a>"],[0,1,"<a href=\"UserBundle\/Entity\/User.php.html#184\">YZ\\UserBundle\\Entity\\User::getAdresseLivraison<\/a>"],[0,1,"<a href=\"UserBundle\/Entity\/User.php.html#195\">YZ\\UserBundle\\Entity\\User::setAdresseFacturation<\/a>"],[0,1,"<a href=\"UserBundle\/Entity\/User.php.html#207\">YZ\\UserBundle\\Entity\\User::getAdresseFacturation<\/a>"],[0,1,"<a href=\"UserBundle\/Entity\/User.php.html#219\">YZ\\UserBundle\\Entity\\User::addCommande<\/a>"],[0,1,"<a href=\"UserBundle\/Entity\/User.php.html#233\">YZ\\UserBundle\\Entity\\User::removeCommande<\/a>"],[0,1,"<a href=\"UserBundle\/Entity\/User.php.html#243\">YZ\\UserBundle\\Entity\\User::getCommandes<\/a>"],[0,1,"<a href=\"UserBundle\/Form\/Type\/RegistrationFormType.php.html#11\">YZ\\UserBundle\\Form\\Type\\RegistrationFormType::buildForm<\/a>"],[0,1,"<a href=\"UserBundle\/Form\/Type\/RegistrationFormType.php.html#22\">YZ\\UserBundle\\Form\\Type\\RegistrationFormType::getParent<\/a>"],[0,1,"<a href=\"UserBundle\/Form\/Type\/RegistrationFormType.php.html#27\">YZ\\UserBundle\\Form\\Type\\RegistrationFormType::getName<\/a>"],[100,1,"<a href=\"UserBundle\/YZUserBundle.php.html#9\">YZ\\UserBundle\\YZUserBundle::getParent<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

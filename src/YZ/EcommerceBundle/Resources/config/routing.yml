@@ -1,0 +1,77 @@
+yz_ecommerce_homepage:
+    path:     /
+    defaults: { _controller: YZEcommerceBundle:Ecommerce:index }
+
+yz_ecommerce_shoppage:
+
+    path:     /shop/{page}
+    defaults: { _controller: YZEcommerceBundle:Ecommerce:shop, page: 1 }
+    requirements:
+      page: \d*
+
+
+yz_ecommerce_promopage:
+
+    path:     /promo/{page}
+    defaults: { _controller: YZEcommerceBundle:Ecommerce:promo, page: 1 }
+    requirements:
+      page: \d*
+
+yz_ecommerce_productpage:
+
+    path:     /product/{slug}
+    defaults: { _controller: YZEcommerceBundle:Ecommerce:product, _format: html }
+    requirements:
+        _format: html
+
+yz_ecommerce_cartpage:
+
+    path:     /cart
+    defaults: { _controller: YZEcommerceBundle:Cart:cart }
+
+yz_ecommerce_addcart:
+
+    path:   /cart/{id}
+    defaults: { _controller: YZEcommerceBundle:Cart:addToCart }
+    requirements:
+        id: \d+
+
+yz_ecommerce_removecart:
+
+    path:   /cart/remove/{id}
+    defaults: { _controller: YZEcommerceBundle:Cart:removeCart }
+    requirements:
+        id: \d+
+
+yz_ecommerce_categorypage:
+
+    path:     /category/{slug}
+    defaults: { _controller: YZEcommerceBundle:Ecommerce:category}
+
+yz_ecommerce_ordersummary:
+    path: /order/summary
+    defaults: { _controller: YZEcommerceBundle:Order:summary }
+
+yz_ecommerce_orderpayment:
+    path: /order/payment
+    defaults: { _controller: YZEcommerceBundle:Order:payment }
+
+yz_ecommerce_ordercheckout:
+    path: /order/checkout
+    defaults: { _controller: YZEcommerceBundle:Order:checkout }
+
+
+yz_ecommerce_userorders:
+    path: /order/user/{id}
+    defaults: { _controller: YZEcommerceBundle:Order:userOrders }
+
+yz_ecommerce_orderpdf:
+    path: /order/{id}
+    defaults: { _controller: YZEcommerceBundle:Order:orderPdf }
+
+yz_ecommerce_pdf:
+    path: /orderprint/{id}
+    defaults:
+      _controller: YZEcommerceBundle:Order:pdf
+    requirements:
+      id: \d*

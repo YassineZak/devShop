@@ -1,0 +1,97 @@
+{% extends "YZEcommerceBundle::layout.html.twig" %}
+
+{% block title %}
+Panier - {{ parent() }}
+{% endblock %}
+{% block body %}
+{% set totalTva = [] %}
+
+
+<!-- Cart -->
+
+<div class="cart_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        {% for message in app.session.flashbag.get('error') %}
+          <div class="alert alert-danger" role="alert">
+            {{ message }}
+          </div>
+        {% endfor %}
+        <div class="cart_container">
+          <h3 class="login_title" >Récapitulatif de la commande</h3>
+          <div class="cart_items">
+                  <table id="cart_table" class="table">
+                    <thead class="thead-light">
+                      <tr>
+                        <th scope="col">Miniature</th>
+                        <th scope="col">Produit</th>
+                        <th scope="col">Quantitée</th>
+                        <th scope="col">Prix Unitaire</th>
+                        <th scope="col">Prix Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                    {% for cartProduct in cartProducts %}
+                    <td class=" miniature"><a href="{{ path('yz_ecommerce_productpage', {'slug': cartProduct.slug}) }}">
+                    {% if app.environment == 'dev' %}
+                        <img src="/devshop/web{{ vich_uploader_asset(cartProduct, 'imageFile') }}" alt="">
+                    {% else %}
+                        <img src="{{ vich_uploader_asset(cartProduct, 'imageFile') }}" alt="">
+                    {% endif %}
+                        </a>
+                    </td>
+
+                    <td>{{cartProduct.titre}}</td>
+                    <td>
+                      {% set qte = app.session.get('panier')[cartProduct.id] %}
+                      {{qte}}</td>
+                    {% if cartProduct.promo is null %}
+                    <td>{{cartProduct.prixTtc}} €</td>
+                    <td>{{cartProduct.prixTtc * app.session.get('panier')[cartProduct.id]}} €</td>
+                    {% else %}
+                    <td>{{cartProduct.promoTtc}} €</td>
+                    <td>{{cartProduct.promoTtc * app.session.get('panier')[cartProduct.id]}} €</td>
+                    {% endif %}
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+                </div>
+          </div>
+
+          <!-- Order Total -->
+          <div class="order_total">
+            <div class="order_total_content text-md-right">
+              <div class="order_total_title">Commande TTC:</div>
+              <div class="order_total_amount">{{sommePrix}} €<small class="tva"> dont {{sommeTva}} € de Tva </small></div>
+            </div>
+          </div>
+          <!-- Order info -->
+            <div >
+              <h3 class="orderLivraison">Infos livraison</h3>
+              <div class="orderInfos">
+                <span>Nom & prénom : </span>
+                {{user.nom}} {{user.prenom}} <br><br>
+                <span>Téléphone : </span>0{{user.telephone}} <br><br>
+                <span>Email : </span>{{user.email}} <br><br>
+                {% if user.adresseLivraison is not null %}
+                <span>Adresse de Livraison : </span>{{user.adresseLivraison}} <br><br>
+                {% else %}
+                <span>Adresse de Livraison : </span>{{user.adresseFacturation}} <br><br>
+                {% endif %}
+                <span>Adresse de Facturation : </span>{{user.adresseFacturation}} <br><br>
+              </div>
+            </div>
+
+
+          <div class="cart_buttons">
+            <a href="{{ path('yz_ecommerce_orderpayment')}}"><button type="button" class="button cart_button_checkout">Etape paiement</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

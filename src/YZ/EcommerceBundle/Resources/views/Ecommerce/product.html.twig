@@ -1,0 +1,107 @@
+{% extends "YZEcommerceBundle::layout.html.twig" %}
+
+{% block title %}
+{{product.titre|capitalize}} - {{ parent() }}
+{% endblock %}
+{% block body %}
+
+<!-- Single Product -->
+
+<div class="single_product">
+  <div class="container">
+    <div class="row">
+
+      <!-- Images -->
+      <div class="col-lg-2 order-lg-1 order-2">
+        <ul class="image_list">
+            {% if app.environment == 'dev' %}
+        {% set image1 = "/devshop/web" ~ vich_uploader_asset(product, 'imageFile') %}
+        {% set image2 = "/devshop/web" ~ vich_uploader_asset(product, 'imageFile2') %}
+        {% set image3 = "/devshop/web" ~ vich_uploader_asset(product, 'imageFile3') %}
+            {% else %}
+        {% set image1 = vich_uploader_asset(product, 'imageFile') %}
+        {% set image2 = vich_uploader_asset(product, 'imageFile2') %}
+        {% set image3 = vich_uploader_asset(product, 'imageFile3') %}
+            {% endif %}
+          <li data-image="{{image1}}">
+          {% if app.environment == 'dev' %}
+            <img src="/devshop/web{{ vich_uploader_asset(product, 'imageFile') }}" />
+          {% else %}
+            <img src="{{ vich_uploader_asset(product, 'imageFile') }}" />
+          {% endif %}
+          </li>
+          {% if product.imageProduit2 != null  %}
+          <li data-image="{{image2}}">
+          {% if app.environment == 'dev' %}
+            <img src="/devshop/web{{ vich_uploader_asset(product, 'imageFile2') }}" />
+          {% else %}
+            <img src="{{ vich_uploader_asset(product, 'imageFile2') }}" />
+          {% endif %}
+          </li>
+          {% endif %}
+          {% if product.imageProduit3 != null  %}
+          <li data-image="{{image3}}">
+          {% if app.environment == 'dev' %}
+            <img src="/devshop/web{{ vich_uploader_asset(product, 'imageFile3') }}" />
+          {% else %}
+            <img src="{{ vich_uploader_asset(product, 'imageFile3') }}" />
+          {% endif %}
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+
+      <!-- Selected Image -->
+      <div class="col-lg-5 order-lg-2 order-1">
+        <div class="image_selected">
+        {% if app.environment == 'dev' %}
+            <img src="/devshop/web{{ vich_uploader_asset(product, 'imageFile') }}" />
+        {% else %}
+            <img src="{{ vich_uploader_asset(product, 'imageFile') }}" />
+        {% endif %}
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="col-lg-5 order-3">
+        <div class="product_description">
+          <div class="product_category">{{product.category.name}}</div>
+          <div class="product_name">{{product.titre|capitalize}}</div>
+            <div class="fontawesome-star"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+          <div class="product_text"><p>{% autoescape false %}{{product.description}}{% endautoescape %}</p></div>
+          <div class="order_info d-flex flex-row">
+            <form action="{{ path('yz_ecommerce_addcart', {'id': product.id}) }}" method="get">
+
+              <div class="clearfix" style="z-index: 1000;">
+
+                <!-- Product Quantity -->
+                <div class="product_quantity clearfix">
+                  <span>Quantity: </span>
+                  <input id="quantity_input" type="text" name="qte" pattern="[1-9]*" value="1">
+                  <div class="quantity_buttons">
+                    <div id="quantity_inc_button" class="quantity_inc quantity_control"><i class="fas fa-chevron-up"></i></div>
+                    <div id="quantity_dec_button" class="quantity_dec quantity_control"><i class="fas fa-chevron-down"></i></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product_price">
+                {% if product.promo is null %}
+                {{product.prixTtc}} €
+              {% else %}
+                  {{product.promoTtc}} €<span class="promo">{{product.prixTtc}} €</span>
+              {% endif %}
+            </div>
+              <div class="button_container">
+                <button type="submit" class="button cart_button" >Ajouter au panier</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

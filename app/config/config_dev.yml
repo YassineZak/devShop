@@ -1,0 +1,184 @@
+imports:
+    - { resource: config.yml }
+
+framework:
+    router:
+        resource: "%kernel.root_dir%/config/routing_dev.yml"
+        strict_requirements: true
+    profiler: { only_exceptions: false }
+
+web_profiler:
+    toolbar: true
+    intercept_redirects: false
+
+monolog:
+    handlers:
+        main:
+            type: stream
+            path: "%kernel.logs_dir%/%kernel.environment%.log"
+            level: debug
+            channels: ["!event"]
+        console:
+            type:   console
+            channels: ["!event", "!doctrine"]
+
+
+
+easy_admin:
+    entities:
+      Commande:
+        disabled_actions: ['edit', 'new']
+        templates:
+          field_datetimetz: 'admin/fields/_datetimetz.html.twig'
+          show: 'admin/_show.html.twig'
+          field_text: 'admin/fields/_text.html.twig'
+        class: YZ\EcommerceBundle\Entity\Commande
+        label: Commandes
+        list:
+          actions: ['show']
+          fields:
+            - { property: 'reference', label: 'Numéro de commande' }
+            - { property: 'dateCommande', type: datetimetz }
+            - { property: 'amount', label: 'Montant'}
+            - { property: 'validation', label: 'Validée'}
+            - { property: 'user', label: 'Utilisateur'}
+        form:
+          fields:
+            - { property: 'reference', label: 'Commande numéro' }
+            - { property: 'dateCommande', label: 'Date de la commande' }
+            - { property: 'user', label: 'Client' }
+            - { property: 'amount', label: 'Montant' }
+
+      Tva:
+        class: YZ\EcommerceBundle\Entity\Tva
+      Category:
+        label: Categories
+        class: YZ\EcommerceBundle\Entity\Category
+        list:
+          fields:
+            - { property: 'name', label: 'Nom de Categorie' }
+            - { property: 'slug' }
+        form:
+          fields:
+            - { property: 'name', label: 'Nom de Categorie' }
+
+      Product:
+        templates:
+          field_datetimetz: 'admin/fields/_datetimetz.html.twig'
+          show: 'admin/_show.html.twig'
+          field_text: 'admin/fields/_text.html.twig'
+        class: YZ\EcommerceBundle\Entity\Product
+        label: Produits
+        list:
+          actions: ['show']
+          fields:
+            - { property: 'titre', label: 'Titre' }
+            - { property: 'resume', label: 'Resume', type: text }
+            - { property: 'prixTtc', label: 'Prix TTC', type: decimal }
+            - { property: 'imageProduit', type: 'image', base_path: '/devshop/web%app.path.product_images%'}
+        show:
+          fields:
+            - { property: 'id', label: 'Id' }
+            - { property: 'titre', label: 'Titre' }
+            - { property: 'description', label: 'Description', type: text }
+            - { property: 'resume', label: 'Resume', type: text }
+            - { property: 'category', label: 'Categorie', type: 'text' }
+            - { property: 'prix', label: 'Prix HT', type: integer }
+            - { property: 'prixTtc', label: 'Prix TTC', type: integer }
+            - { property: 'promo', label: 'Promo HT', type: integer }
+            - { property: 'promoTtc', label: 'Promo TTC', type: integer }
+            - { property: 'tva', label: 'Tva' }
+            - { property: 'stock', label: 'Stock', type: integer }
+            - { property: 'reference', label: 'Reférence', type: text }
+            - { property: 'imageProduit', type: 'image', base_path: '/devshop/web%app.path.product_images%', label: 'Image principale'}
+            - { property: 'imageProduit2', type: 'image', base_path: '/devshop/web%app.path.product_images%', label: 'Images additionnelles'}
+            - { property: 'imageProduit3', type: 'image', base_path: '/devshop/web%app.path.product_images%', label: 'Images additionnelles'}
+        form:
+          fields:
+            - { property: 'titre', label: 'Titre', type: text }
+            - { property: 'resume', label: 'Resume', type: 'text', toolbar: full }
+            - { property: 'description', label: 'Description', type: 'text' }
+            - { property: 'category', label: 'Categorie'}
+            - { property: 'prix', label: 'Prix HT', type: integer }
+            - { property: 'tva', label: 'TVA'}
+            - { property: 'promo', label: 'Prix Promo HT', type: integer }
+            - { property: 'stock', label: 'Stock', type: integer }
+            - { property: 'reference', label: 'Reférence', type: text }
+            - { property: 'imageFile', type: 'file', label: 'Photo Principale' }
+            - { property: 'imageFile2', type: 'file', label: 'photos additionnelles' }
+            - { property: 'imageFile3', type: 'file', label: 'photos additionnelles' }
+
+      User:
+        class: YZ\UserBundle\Entity\User
+        acme_project:
+          export_path: '%kernel.root_dir/../var/export/user'
+          password_encoding: { algorithm: 'bcrypt', cost: 12 }
+        label: Membres
+        show:
+          fields:
+            - { property: username, label: Pseudo}
+            - { property: nom, type: text, label: Nom }
+            - { property: prenom, type: text, label: Prénom }
+            - { property: email, type: email, label: Email }
+            - { property: telephone, type: tel, label: Téléphone }
+            - { property: 'roles', template: 'admin/fields/tag_collection.html.twig',
+                        label_colors: ['primary', 'success', 'info'] }
+            - { property: adresseFacturation, type: text, label: Adresse de facturation }
+            - { property: villeFacturation, type: text, label: Ville }
+            - { property: codePostalFacturation, type: text, label: Code postal }
+            - { property: enabled, label: actif }
+            - { property: adresseLivraison, type: text, label: Adresse de livraison }
+            - { property: villeLivraison, type: text, label: Ville }
+            - { property: codePostalLivraison, type: text, label: Code postal }
+
+        list:
+          title: 'liste des membres'
+          actions:
+            - { name: show, css_class: btn btn-primary}
+            - { name: edit, css_class: btn btn-success}
+            - { name: delete, css_class: btn btn-danger}
+          fields:
+            - { property: username, label: Pseudo}
+            - { property: fullName, label: Utilisateur}
+            - { property: enabled, label: actif, type: toggle }
+            - { property: email, type: email }
+            - { property: lastLogin, label: Dernière Connexion, type: datetimetz, format: 'd M Y h:m:i'}
+            - { property: 'roles', template: 'admin/fields/tag_collection.html.twig',
+                        label_colors: ['primary', 'success', 'info'] }
+
+        form:
+          fields:
+            - { property: username, label: Pseudo}
+            - nom
+            - prenom
+            - email
+            - { property: adresseFacturation, type: text }
+            - { property: telephone, type: integer }
+            - { property: enabled, label: actif }
+            - { property: 'roles', type: 'choice', type_options: { multiple: true, expanded: true, choices: { 'Utilisateur': 'ROLE_USER', 'Administrateur': 'ROLE_SUPER_ADMIN' } } }
+          form_options: { validation_groups: ['Profile'] }
+        new:
+          fields:
+            - '-id'
+            - { property: 'plainPassword', type: 'repeated' }
+
+    site_name: DevShop
+    design:
+      assets:
+        css:
+          - 'styles/back_office.css'
+      brand_color: '#0e8ce4'
+      templates:
+        field_datetimetz: 'admin/fields/_datetimetz.html.twig'
+        show: 'admin/_show.html.twig'
+        # uncomment to get logging in your browser
+        # you may have to allow bigger header sizes in your Web server configuration
+        #firephp:
+        #    type:   firephp
+        #    level:  info
+        #chromephp:
+        #    type:   chromephp
+        #    level:  info
+
+#swiftmailer:
+#    delivery_address: me@example.com

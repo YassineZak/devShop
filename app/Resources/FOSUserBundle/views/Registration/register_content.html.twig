@@ -1,0 +1,32 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register login_container'}}) }}
+<div class="global-form">
+  <div class="left-column">
+    {{ form_row(form.username) }}
+    {{ form_row(form.email) }}
+  </div>
+  <div class="right-column">
+    {{ form_row(form.plainPassword) }}
+  </div>
+  </div>
+  <h2>Coordonnées Personnelles</h2>
+  <div class="global-form">
+    <div class="left-column">
+      {{ form_row(form.nom)}}
+      {{ form_row(form.prenom) }}
+    </div>
+    <div class="right-column" id="address">
+      {{ form_row(form.telephone, {'attr': {'label': 'Adresse'}} )}}
+      {{ form_row(form.adresseFacturation, {'id': 'autocompleteLivraison', 'attr': {'onFocus': 'geolocate()'}} )}}
+    </div>
+  </div>
+  <input type="checkbox" name="" value="" class="checkboxLivraison"> Adresse de Livraison Différentre
+  <div class="adresseLivraison">
+    <h3>Adresse de Livraison</h3>
+    {{ form_row(form.adresseLivraison, {'id': 'autocompleteFacturation', 'attr': {'onFocus': 'geolocate()'}} )}}
+  </div>
+<div>
+    <input type="submit" class="btn btn-primary btn-registration" value="{{ 'registration.submit'|trans }}" />
+    {{ form_end(form) }}
+</div>

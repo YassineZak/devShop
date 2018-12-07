@@ -1,0 +1,46 @@
+{% extends "YZEcommerceBundle::layout.html.twig" %}
+
+{% block title %}
+Panier - {{ parent() }}
+{% endblock %}
+{% block body %}
+{% set totalTva = [] %}
+
+
+<!-- Cart -->
+
+<div class="cart_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="cart_container">
+          <div class="login_title">Historique de vos commandes</div>
+          </div>
+          <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Numéro de commande</th>
+      <th scope="col">Montant</th>
+      <th scope="col">Date commande</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for userOrder in userOrders %}
+      <tr>
+        <td>{{userOrder.reference }}</td>
+        <td>{{userOrder.amount }} €</td>
+        <td><a href="{{path('yz_ecommerce_orderpdf', {'id':userOrder.id})}}">{{userOrder.dateCommande|date('Y-m-d') }}</a></td>
+      </tr>
+
+      {% endfor %}
+  </tbody>
+</table>
+
+          <!-- Order Total -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

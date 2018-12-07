@@ -1,0 +1,40 @@
+yz_contact_form:
+    resource: "@YZContactFormBundle/Resources/config/routing.yml"
+    prefix:   /
+
+yz_search:
+    resource: "@YZSearchBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+
+yz_ecommerce:
+    resource: "@YZEcommerceBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /profile
+
+easy_admin_bundle:
+    resource: "@EasyAdminBundle/Controller/AdminController.php"
+    type:     annotation
+    prefix:   /easyadmin
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
