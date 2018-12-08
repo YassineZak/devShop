@@ -24,8 +24,8 @@ easy_admin:
       Commande:
         disabled_actions: ['edit', 'new']
         templates:
-          field_datetimetz: 'admin/fields/_datetimetz.html.twig'
-          show: 'admin/_show.html.twig'
+          field_datetimetz: 'easy_admin/fields/_datetimetz.html.twig'
+          show: 'easy_admin/_show.html.twig'
           field_text: 'admin/fields/_text.html.twig'
         class: YZ\EcommerceBundle\Entity\Commande
         label: Commandes
@@ -59,9 +59,9 @@ easy_admin:
 
       Product:
         templates:
-          field_datetimetz: 'admin/fields/_datetimetz.html.twig'
-          show: 'admin/_show.html.twig'
-          field_text: 'admin/fields/_text.html.twig'
+          field_datetimetz: 'easy_admin/fields/_datetimetz.html.twig'
+          show: 'easy_admin/_show.html.twig'
+          field_text: 'easy_admin/fields/_text.html.twig'
         class: YZ\EcommerceBundle\Entity\Product
         label: Produits
         list:
@@ -116,7 +116,7 @@ easy_admin:
             - { property: prenom, type: text, label: Prénom }
             - { property: email, type: email, label: Email }
             - { property: telephone, type: tel, label: Téléphone }
-            - { property: 'roles', template: 'admin/fields/tag_collection.html.twig',
+            - { property: 'roles', template: 'easy_admin/fields/tag_collection.html.twig',
                         label_colors: ['primary', 'success', 'info'] }
             - { property: adresseFacturation, type: text, label: Adresse de facturation }
             - { property: villeFacturation, type: text, label: Ville }
@@ -138,7 +138,7 @@ easy_admin:
             - { property: enabled, label: actif, type: toggle }
             - { property: email, type: email }
             - { property: lastLogin, label: Dernière Connexion, type: datetimetz, format: 'd M Y h:m:i'}
-            - { property: 'roles', template: 'admin/fields/tag_collection.html.twig',
+            - { property: 'roles', template: 'easy_admin/fields/tag_collection.html.twig',
                         label_colors: ['primary', 'success', 'info'] }
 
         form:
@@ -164,5 +164,5 @@ easy_admin:
           - 'styles/back_office.css'
       brand_color: '#0e8ce4'
       templates:
-        field_datetimetz: 'admin/fields/_datetimetz.html.twig'
-        show: 'admin/_show.html.twig'
+        field_datetimetz: 'easy_admin/fields/_datetimetz.html.twig'
+        show: 'easy_admin/_show.html.twig'
