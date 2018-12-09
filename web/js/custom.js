@@ -1128,9 +1128,16 @@ $form.submit(function(e){
 $( document ).ready(function() {
     $(".search").keyup(function(){
 			if ($(this).val().length > 5) {
+			    var gotUrl = '';
+			    if(window.location.href.indexOf("localhost")){
+                   gotUrl= '/devshop/web/app_dev.php/json/search?form[search]='
+                }
+                else{
+                   gotUrl= '/json/search?form[search]='
+                }
 				$.ajax({
 					type: 'get',
-					url: 'http://localhost/devshop/web/app_dev.php/json/search?form[search]='+ $(this).val(),
+					url:  gotUrl+$(this).val(),
 					dataType: 'json',
 					beforeSend:  function(){
 					},
@@ -1140,15 +1147,14 @@ $( document ).ready(function() {
 						if ($( "#search-result ul li" ).hasClass( data[i].slug )) {
 						}
 						else {
-							$("#search-result ul").append("<li class =" + data[i].slug + "><a href='/devshop/web/app_dev.php/product/" + data[i].slug + "'><span>" + data[i].titre +  "</span><img class='text-right' src='/devshop/web/uploads/images/products/" + data[i].imageProduit + "' alt=''></a></li>");
-
+							if (window.location.href.indexOf("localhost")){
+                                $("#search-result ul").append("<li class =" + data[i].slug + "><a href='/devshop/web/app_dev.php/product/" + data[i].slug + "'><span>" + data[i].titre +  "</span><img class='text-right' src='/devshop/web/uploads/images/products/" + data[i].imageProduit + "' alt=''></a></li>");
+                            }
+							else{
+                                $("#search-result ul").append("<li class =" + data[i].slug + "><a href='/product/" + data[i].slug + "'><span>" + data[i].titre +  "</span><img class='text-right' src='/uploads/images/products/" + data[i].imageProduit + "' alt=''></a></li>");
+                            }
 						}
 					}
-					/*	<li>
-		          iphone X "http://localhost/devshop/web/uploads/images/products/5b5850d67343b864510184.jpg"
-
-
-		        </li>*/
 						$("#search-result").show();
 					}
 
