@@ -1129,7 +1129,7 @@ $( document ).ready(function() {
     $(".search").keyup(function(){
 			if ($(this).val().length > 5) {
 			    var gotUrl = '';
-			    if(window.location.href.indexOf("localhost")){
+			    if(window.location.href.indexOf("localhost")> -1){
                    gotUrl= '/devshop/web/app_dev.php/json/search?form[search]='
                 }
                 else{
@@ -1147,7 +1147,7 @@ $( document ).ready(function() {
 						if ($( "#search-result ul li" ).hasClass( data[i].slug )) {
 						}
 						else {
-							if (window.location.href.indexOf("localhost")){
+							if (window.location.href.indexOf("localhost") > -1){
                                 $("#search-result ul").append("<li class =" + data[i].slug + "><a href='/devshop/web/app_dev.php/product/" + data[i].slug + "'><span>" + data[i].titre +  "</span><img class='text-right' src='/devshop/web/uploads/images/products/" + data[i].imageProduit + "' alt=''></a></li>");
                             }
 							else{
