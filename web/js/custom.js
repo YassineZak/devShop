@@ -1166,3 +1166,10 @@ $( document ).ready(function() {
 			}
 		})
 });
+
+$(document).ready(function(){
+    if(/chrom(e|ium)/.test(navigator.userAgent.toLowerCase())){
+        $('.header_search_input').css('height', '55px');
+        $('#selectCart').css({'width':'35px', 'padding-left':'10px'});
+    }
+})
