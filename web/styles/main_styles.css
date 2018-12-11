@@ -3850,6 +3850,7 @@ margin-bottom: 10px;
 #search-result ul li img{
 	width: 50px;
 	margin-left: 50% !important;
+    height: 50px;
 }
 #search-result ul li a {
 	display: flex;
