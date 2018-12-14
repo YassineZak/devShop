@@ -6,8 +6,6 @@ yz_search:
     resource: "@YZSearchBundle/Resources/config/routing.yml"
     prefix:   /
 
-
-
 yz_ecommerce:
     resource: "@YZEcommerceBundle/Resources/config/routing.yml"
     prefix:   /
