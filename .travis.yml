@@ -3,6 +3,6 @@ php:
 - 7.2.7
 script:
 - composer install
-- ./vendor/bin/phpunit
+- vendor/bin/phpunit
 sudo: "required"
 after_success:
