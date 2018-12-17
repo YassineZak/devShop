@@ -3,7 +3,7 @@ php:
 - 7.2.7
 script:
 - composer install
-- ./vendor/bin/simple-phpunit
+- sudo ./vendor/bin/simple-phpunit
 sudo: "required"
 env:
   global:
@@ -12,7 +12,3 @@ env:
   - secure: cuMw7kgvLy+oRaZWDr9CO5NtZKEDCzlC2LfNFdPyise76mSeA9eCTwRRdz5z5H9lzgkBsZWhcnzuwYrVmLlS6RAD1gqUo2FQSsi4nhGhMshvkWxT7/PQWrlj2NXhroK5Sk6WlgYyDznQoW3285s1MJBoVnYrEy7vCAVqsJvG5JAVFndXR/7dM/h3MI1Mebdrv4iKTNKOupOOtiFwTpXc1e7t6ixnkklCUKmVamCgiuiaW/L9YUrMcDMFce8Zju7LKcbXq/b0YGDeV6RBwzT0lRzqKQoPhkoBYC15hB+OMxz29jON/qBKPH+GgayGa1hivQWUdFzyel2Wv6nn5rijZYL162epIJcabFue7uyPDpt92o8ffAmDQ019BIlmSGQaFPghMSIlQj/MQHYRqGf4zDt/P3DHW+ULR+PxVyRkthtpBI4m3xWIMMpY6/gHHVw2iJ+oRtKIf7prTn6TdEzxfMCZD067FleH9+6WWoKfgYpN9OpDwmCplEgyu/eK0ls68GDOLeAR9k/Mzi3v1Umigh+eLViLgO16jcrDk1Nvu0BMGwnJiZo6cdeZVcgVJdDxQuaBDGWn1EeOtgtrjAVMvLLs01W+1e1mNPY0LV4BQY48KXaxtdqbMnbZnib390jPp+r1NFAUEUVyR/QWQfAllXyLGHfUROVWc11u32RJLPU=
   - secure: C0whSLIi+AVWA0msfps13mrapIifH85Im2Z8aNpBsCJkhNTRIxncYBmjO+bEkk4aEjCze0aAMPw5eSvZ6OnV6P6SDMt65u9OJRBD5j8rTWgsjjGtbfJkus/RsE20YlZ8qnkqRCs5SYUWgKfCsH3sf38E2eDSVOUFPWEImL2yuitbDG/81J2C3irinlYUtt6vZ9ZK9E5XadDFy0EWkbfnbguAKZqulwIJi4cg5FXy555MIOUH3mngt/iFgJmzys63KTGKSA1J9yVNFvcw7YwaLXPek0q/rs6GOnYirvi6kqjtsvLqJKL90mSoHxIhnJBKlX3KNX3sGTxOLnsng16UZerHO4RGzgCh/a/RcL4WwZMUdd+OAstQEn3YJW+uIAvGWUsEDEt5Lfi4uPLy0cnvwkCAyJO+Ux5lPsrpkWbWQJ5kdcIoVmaDGx25j9IONOHRrFkGWOLKPceN4VbnQDgqQYFEzp3cXsVWIf1v2Gt0+gtNqtW6Tf/4FPEB94m3THCAWP2KQhKjdtTtzBE6NasLapjj/kftwEnKD/zU+0ZCfofZo+TIG4MRdvlAM1AI3a2LThEAN1mv5MBnOkOcmDcn6tg/3MYbYaYQN/j0cYE2MdeHVjtLrjUKNzDTEp2bZi8mIMxeE6d5PSBuYO+8/Gl5+dr8HCxXY4j9j0zwfzDVty0=
 after_success:
-  - git config --global user.email "yassine.zakari@hotmail.fr"
-  - git config --global user.name "YassineZak"
-  - git remote add master https://GITHUB_NEW_SECRET_TOKEN@github.com/YassineZak/devshop.git
-  - git push origin master
