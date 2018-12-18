@@ -27,8 +27,7 @@ env:
 # Update composer
 before_install:
   - composer self-update
-  - ini_set('memory_limit', '-1')
-  - composer update
+  - composer install
 
 # Install composer dependencies,
 # Create database, schema and fixtures
