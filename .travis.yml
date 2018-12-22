@@ -42,4 +42,4 @@ install:
 
 # Run script
 script:
-  - sudo ./vendor/bin/simple-phpunit
+  - ./vendor/bin/simple-phpunit
