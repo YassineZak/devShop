@@ -36,7 +36,10 @@ install:
   - cp app/config/parameters.yml.dist app/config/parameters.yml
   - php bin/console doctrine:database:create
   - php bin/console doctrine:schema:update --force
+  - php bin/console doctrine:fixtures:load --fixtures src/YZ/EcommerceBundle/DataFixtures/ORM/LoadCategory.php
+  - php bin/console doctrine:fixtures:load --fixtures src/YZ/EcommerceBundle/DataFixtures/ORM/LoadTva.php
+  - php bin/console doctrine:fixtures:load --fixtures src/YZ/EcommerceBundle/DataFixtures/ORM/LoadProduct.php
 
 # Run script
 script:
-  - ./vendor/bin/simple-phpunit
+  - sudo ./vendor/bin/simple-phpunit
