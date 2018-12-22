@@ -36,9 +36,9 @@ install:
   - cp app/config/parameters.yml.dist app/config/parameters.yml
   - php bin/console doctrine:database:create
   - php bin/console doctrine:schema:update --force
-  - php bin/console doctrine:fixtures:load --fixtures src/YZ/EcommerceBundle/DataFixtures/ORM/LoadCategory.php
-  - php bin/console doctrine:fixtures:load --fixtures src/YZ/EcommerceBundle/DataFixtures/ORM/LoadTva.php
-  - php bin/console doctrine:fixtures:load --fixtures src/YZ/EcommerceBundle/DataFixtures/ORM/LoadProduct.php
+  - php bin/console doctrine:fixtures:load --fixtures src/YZ/EcommerceBundle/DataFixtures/ORM/LoadCategory.php --append
+  - php bin/console doctrine:fixtures:load --fixtures src/YZ/EcommerceBundle/DataFixtures/ORM/LoadTva.php --append
+  - php bin/console doctrine:fixtures:load --fixtures src/YZ/EcommerceBundle/DataFixtures/ORM/LoadProduct.php --append
 
 # Run script
 script:
