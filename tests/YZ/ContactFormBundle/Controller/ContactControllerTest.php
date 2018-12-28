@@ -20,6 +20,6 @@ class ContactControllerTest extends WebTestCase
         $client->submit($form);
         $crawler = $client->followRedirect();
 
-       $this->assertSame(1, $crawler->filter('div.alert.alert-success')->count());*/
-    }
+       $this->assertSame(1, $crawler->filter('div.alert.alert-success')->count());
+    }*/
 }
