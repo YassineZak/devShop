@@ -12,7 +12,6 @@ class EcommerceControllerTest extends WebTestCase
         $client = static::createClient();
         $client->request('GET', '/');
         $this->assertSame(200, $client->getResponse()->getStatusCode());
-        echo $client->getResponse()->getContent();
     }
 
     public function testShopPage(){
@@ -28,7 +27,7 @@ class EcommerceControllerTest extends WebTestCase
     }
     public function testProductPage(){
         $client = static::createClient();
-        $client->request('GET', '/product/xbox-one-standard');
+        $client->request('GET', '/product/dell_alienware');
         $this->assertSame(200, $client->getResponse()->getStatusCode());
     }
 
