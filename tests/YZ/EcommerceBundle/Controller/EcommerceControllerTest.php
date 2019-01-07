@@ -12,7 +12,6 @@ class EcommerceControllerTest extends WebTestCase
         $client = static::createClient();
         $client->request('GET', '/');
         $this->assertSame(200, $client->getResponse()->getStatusCode());
-        echo $client->getResponse()->getContent();
     }
 
     public function testShopPage(){

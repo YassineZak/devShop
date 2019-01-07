@@ -1,17 +1,46 @@
+# Project language
 language: php
-php:
-- 7.2.7
-script:
-- ./vendor/bin/simple-phpunit
-sudo: "required"
+
+# Allows use container-based infrastructure
+sudo: false
+
+# Start mysql service
+services:
+  - mysql
+
+# Cache composer packages so "composer install" is faster
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+
+# Matrix to test in every php version
+matrix:
+  # Fast finish allows to set the build as "finished" even if the "allow_failures" matrix elements are not finished yet.
+  fast_finish: true
+  include:
+    - php: 7.2.10
+
+# Define an environment variable
 env:
-  global:
-  - secure: aF/BM0oocuwjEImEezfsbAa0HourwBYa/QRK7hEbHqCsylPI1uuJJr8hGXs2vu9iX80s6IUBKFNHbfHsIZSovi9K6LqUDPEMDMs6nWCPcZJm5YwM0/c3a38Hc5h6qrruBmTMyMMTRBl63Dtz2nSe1eT3Ujsgv7k2P6DqPZEBeaV/lzMxevQWG+/SO1DOj5b5TWSf1BkBGdUMgdPT5DWfsexnAPWjeyhRZm9YeSEYU+je9j9f2kQPWKxXZ2zAQeBNNPRZW+vPVCNLV2sUXfn0ANviNoG7aiSOyDTkLYmtAQc9uuoVweo42qNvR7WEMskdLL7ygfGwuq07G77nS/+QUrACPg3zOYTqAINlJJ6ipg5kkuQl70iMPmMgXJ82dhdXMBZ1nM+kkczAAroRPTkQe0G+Z6BzJHhUkvDFdtyLumju7WeQ2V5LCtVUYOwuOHI4qMZC1ISCKVRqRWDLsa0PEA9SSUuwfLbiuYzcDgRC0779haTvfg1KW72rjHKcqc5DXKr21Usea2MPfrhiB7BeVWJTZtY8GQtu9tNb1Iy2AIrCu4lRlCnxdKzLfh+yuc9yfkbX3+NcnnD0FrObtGQBvIpSozDBVf3E049uW435sPjw+tkI4zDMlU9jhqbY63KwCvZG6XiEpK0I/P8xSegEgCSCM3B4JOTNnYbb4xkRYcc=
-  - secure: LBGTDx30Z2Jqs7uAUs5HB0geF8JWHf22YY89jR82if+ERzhrq04tXvG97VZHzr2BILEAh1XBDREEJvSDZnaIKF89QlL1RP3ybvror4hR0VaN5DhjlkfMTrdAkVHxC6Ocvby0OivE7INaXoxTCoIbM8h7d8D8dRW5dcQNoYYaELVtVXhHxsbNx+3MGS/HfZjOsDtEFkICAHRP/cuOZ9nIgLQFjcWyQRenai9YCZ9rgKeM8sAauSAXi8WEzAhQ5F7lzHLz1bPN/5MnczNIDgUdnuOwWdt+Y6h06TsrP17V8LJN2AlJyA9pCeDeMieU13XuIFr1GokbpcCR4UeghPRf65jpLt2Q/jCWayEZ2+z+GPtNK0k983nfKBL87xCLUbYHzP+rZLcpYSC8Ip7I6l62eVraz4DOu7LNRukvQQ5yLa7Qoaj1qLpyZ+UT0sdvR6B8ZwAkrgzICuXfnmNtKqI0TU49JG3PvYfw1bmEuqi5uiUsoLGwYfiE2XdOUlv172iRZ7QmjfpV8E5z/QSsLoX7kEAx8JLphLzJ8OYOfi1LEl6zEPQMUYcyOhXB0+TAa3bdMVCl4XxoFsXw2xJA+siAEpYkxLCSwDnybf5EwSguFONkJimVkj6Nb9/sdBI6HBpCBTgqVOIqowru3aWTjNr1nd7wOAv0tdv6fzGAwV6sMzI=
-  - secure: cuMw7kgvLy+oRaZWDr9CO5NtZKEDCzlC2LfNFdPyise76mSeA9eCTwRRdz5z5H9lzgkBsZWhcnzuwYrVmLlS6RAD1gqUo2FQSsi4nhGhMshvkWxT7/PQWrlj2NXhroK5Sk6WlgYyDznQoW3285s1MJBoVnYrEy7vCAVqsJvG5JAVFndXR/7dM/h3MI1Mebdrv4iKTNKOupOOtiFwTpXc1e7t6ixnkklCUKmVamCgiuiaW/L9YUrMcDMFce8Zju7LKcbXq/b0YGDeV6RBwzT0lRzqKQoPhkoBYC15hB+OMxz29jON/qBKPH+GgayGa1hivQWUdFzyel2Wv6nn5rijZYL162epIJcabFue7uyPDpt92o8ffAmDQ019BIlmSGQaFPghMSIlQj/MQHYRqGf4zDt/P3DHW+ULR+PxVyRkthtpBI4m3xWIMMpY6/gHHVw2iJ+oRtKIf7prTn6TdEzxfMCZD067FleH9+6WWoKfgYpN9OpDwmCplEgyu/eK0ls68GDOLeAR9k/Mzi3v1Umigh+eLViLgO16jcrDk1Nvu0BMGwnJiZo6cdeZVcgVJdDxQuaBDGWn1EeOtgtrjAVMvLLs01W+1e1mNPY0LV4BQY48KXaxtdqbMnbZnib390jPp+r1NFAUEUVyR/QWQfAllXyLGHfUROVWc11u32RJLPU=
-  - secure: C0whSLIi+AVWA0msfps13mrapIifH85Im2Z8aNpBsCJkhNTRIxncYBmjO+bEkk4aEjCze0aAMPw5eSvZ6OnV6P6SDMt65u9OJRBD5j8rTWgsjjGtbfJkus/RsE20YlZ8qnkqRCs5SYUWgKfCsH3sf38E2eDSVOUFPWEImL2yuitbDG/81J2C3irinlYUtt6vZ9ZK9E5XadDFy0EWkbfnbguAKZqulwIJi4cg5FXy555MIOUH3mngt/iFgJmzys63KTGKSA1J9yVNFvcw7YwaLXPek0q/rs6GOnYirvi6kqjtsvLqJKL90mSoHxIhnJBKlX3KNX3sGTxOLnsng16UZerHO4RGzgCh/a/RcL4WwZMUdd+OAstQEn3YJW+uIAvGWUsEDEt5Lfi4uPLy0cnvwkCAyJO+Ux5lPsrpkWbWQJ5kdcIoVmaDGx25j9IONOHRrFkGWOLKPceN4VbnQDgqQYFEzp3cXsVWIf1v2Gt0+gtNqtW6Tf/4FPEB94m3THCAWP2KQhKjdtTtzBE6NasLapjj/kftwEnKD/zU+0ZCfofZo+TIG4MRdvlAM1AI3a2LThEAN1mv5MBnOkOcmDcn6tg/3MYbYaYQN/j0cYE2MdeHVjtLrjUKNzDTEp2bZi8mIMxeE6d5PSBuYO+8/Gl5+dr8HCxXY4j9j0zwfzDVty0=
-after_success:
-  - git config --global user.email "yassine.zakari@hotmail.fr"
-  - git config --global user.name "YassineZak"
-  - git remote add master https://GITHUB_NEW_SECRET_TOKEN@github.com/YassineZak/devshop.git
-  - git push origin master
+  - SYMFONY_VERSION="3.4.*" DB=mysql
+
+# Update composer
+before_install:
+  - composer self-update
+  - composer install
+
+# Install composer dependencies,
+# Create database, schema and fixtures
+install:
+  - composer install
+  - cp app/config/parameters.yml.dist app/config/parameters.yml
+  - php bin/console doctrine:database:create
+  - php bin/console doctrine:schema:update --force
+  - php bin/console doctrine:fixtures:load --fixtures src/YZ/EcommerceBundle/DataFixtures/ORM/LoadCategory.php --append
+  - php bin/console doctrine:fixtures:load --fixtures src/YZ/EcommerceBundle/DataFixtures/ORM/LoadTva.php --append
+  - php bin/console doctrine:fixtures:load --fixtures src/YZ/EcommerceBundle/DataFixtures/ORM/LoadProduct.php --append
+
+# Run script
+script:
+  - ./vendor/bin/simple-phpunit
+  

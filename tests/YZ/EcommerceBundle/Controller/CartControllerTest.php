@@ -17,17 +17,17 @@ class CartControllerTest extends WebTestCase
     public function testAddToCartPage(){
 
         $client = static::createClient();
-        $client->request('GET', '/cart/5');
+        $client->request('GET', '/cart/1');
         $crawler = $client->followRedirect();
-        $this->assertSame(1, $crawler->filter('html:contains("The Witcher 3 ps4")')->count());
+        $this->assertSame(1, $crawler->filter('html:contains("xbox")')->count());
 
     }
     public function testDeletefromCartPage(){
 
         $client = static::createClient();
-        $client->request('GET', '/cart/remove/5');
+        $client->request('GET', '/cart/remove/1');
         $crawler = $client->followRedirect();
-        $this->assertSame(0, $crawler->filter('html:contains("The Witcher 3 ps4")')->count());
+        $this->assertSame(0, $crawler->filter('html:contains("xbox")')->count());
     }
 
 }
