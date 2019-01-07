@@ -27,7 +27,7 @@ class EcommerceControllerTest extends WebTestCase
     }
     public function testProductPage(){
         $client = static::createClient();
-        $client->request('GET', '/product/dell-alienware');
+        $client->request('GET', '/product/xbox-one-standard');
         $this->assertSame(200, $client->getResponse()->getStatusCode());
     }
 

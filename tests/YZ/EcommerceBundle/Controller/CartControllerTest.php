@@ -19,7 +19,7 @@ class CartControllerTest extends WebTestCase
         $client = static::createClient();
         $client->request('GET', '/cart/1');
         $crawler = $client->followRedirect();
-        $this->assertSame(1, $crawler->filter('html:contains("alienware")')->count());
+        $this->assertSame(1, $crawler->filter('html:contains("xbox")')->count());
 
     }
     public function testDeletefromCartPage(){
@@ -27,7 +27,7 @@ class CartControllerTest extends WebTestCase
         $client = static::createClient();
         $client->request('GET', '/cart/remove/1');
         $crawler = $client->followRedirect();
-        $this->assertSame(0, $crawler->filter('html:contains("alienware")')->count());
+        $this->assertSame(0, $crawler->filter('html:contains("xbox")')->count());
     }
 
 }
