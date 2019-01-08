@@ -25,14 +25,13 @@ class SearchControllerTest extends WebTestCase
 
         $term = 'xbox';
         static::bootKernel();
-        $entityManager = static::$kernel->getContainer()->get('doctrine.orm.entity_manager');
-        $repository = $entityManager->getRepository('YZEcommerceBundle:Product');
-        $searchresult = $repository->findByTerm($term);
-        $response = new JsonResponse();
-        $response->setData($searchresult);
-        dump($response);
-        die;
-        return $response;
+        $client = static::createClient();
+        $client->request('GET', '/json/search');
+        $response = $client->getResponse();
+        $this->assertTrue($response->headers->contains('Content-Type', 'application/json'));
+        $this->assertJson($response->getContent());
+        $this->assertSame(200, $response->getStatusCode());
+        json_decode($response->getContent(), true);
     }
 
 }

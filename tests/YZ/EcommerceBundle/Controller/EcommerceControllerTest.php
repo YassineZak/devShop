@@ -30,6 +30,11 @@ class EcommerceControllerTest extends WebTestCase
         $client->request('GET', '/product/xbox-one-standard');
         $this->assertSame(200, $client->getResponse()->getStatusCode());
     }
+    public function testCategoryPage(){
+        $client = static::createClient();
+        $client->request('GET', '/category/console-jeux-videos');
+        $this->assertSame(200, $client->getResponse()->getStatusCode());
+    }
 
 }
 
