@@ -11,7 +11,7 @@ class LoadCategory implements FixtureInterface
     public function load(ObjectManager $manager)
     {
 
-            $names = array('jeux videos');
+            $names = array('console jeux videos');
             $category = new Category();
               foreach($names as $name){
 
