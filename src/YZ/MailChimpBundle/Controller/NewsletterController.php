@@ -33,14 +33,28 @@ class NewsletterController extends Controller
         $mailChimp->verify_ssl = false;
         $listId = "6bbe9bec78";
         $membersMail= $mailChimp->get("lists/$listId/members");
-        
-        $result = $mailChimp->post("lists/$listId/members", [
-            'email_address' => 'davy@example.com',
+        $emailExist = false;
+        foreach ($membersMail['members'] as $member) {
+            if ($member['email_address'] == $userMail){
+                $emailExist = true;
+            }
+        }
+        if ($emailExist){
+            $request->getSession()->getFlashBag()->add('notice', 'Votre addresse mail est déja inscrite à notre newletter');
+            dump('ko');
+        }
+        else{
+            $result = $mailChimp->post("lists/$listId/members", [
+            'email_address' => $userMail,
             'status'        => 'subscribed',
         ]);
-
-        $log = $mailChimp->getLastResponse();
-        dump($mailChimp);
+            if ($result == $userMail){
+                $request->getSession()->getFlashBag()->add('success', 'Votre addresse email a été ajouté avec succes');
+            }
+            else{
+                $request->getSession()->getFlashBag()->add('error', 'Une erreur s\'est produite');
+            }
+        }
         die;
 
     }
