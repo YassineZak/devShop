@@ -1,0 +1,4 @@
+services:
+#    yz_mail_chimp.example:
+#        class: YZ\MailChimpBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

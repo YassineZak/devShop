@@ -1,3 +1,7 @@
+yz_mail_chimp:
+    resource: "@YZMailChimpBundle/Resources/config/routing.yml"
+    prefix:   /
+
 yz_contact_form:
     resource: "@YZContactFormBundle/Resources/config/routing.yml"
     prefix:   /

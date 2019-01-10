@@ -26,6 +26,7 @@ class AppKernel extends Kernel
             new YZ\SearchBundle\YZSearchBundle(),
             new YZ\ContactFormBundle\YZContactFormBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
+            new YZ\MailChimpBundle\YZMailChimpBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

@@ -1,0 +1,3 @@
+yz_mail_chimp_homepage:
+    path:     /
+    defaults: { _controller: YZMailChimpBundle:Default:index }
