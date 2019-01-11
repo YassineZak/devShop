@@ -41,21 +41,20 @@ class NewsletterController extends Controller
         }
         if ($emailExist){
             $request->getSession()->getFlashBag()->add('notice', 'Votre addresse mail est déja inscrite à notre newletter');
-            dump('ko');
         }
         else{
             $result = $mailChimp->post("lists/$listId/members", [
             'email_address' => $userMail,
             'status'        => 'subscribed',
         ]);
-            if ($result == $userMail){
+            if ($result['email_address'] == $userMail){
                 $request->getSession()->getFlashBag()->add('success', 'Votre addresse email a été ajouté avec succes');
             }
             else{
                 $request->getSession()->getFlashBag()->add('error', 'Une erreur s\'est produite');
             }
         }
-        die;
+        return $this->redirectToRoute('yz_ecommerce_homepage');
 
     }
 }

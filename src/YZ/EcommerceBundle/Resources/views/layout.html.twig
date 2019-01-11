@@ -408,7 +408,21 @@
       {% block body %}{% endblock %}
 
       <!-- Newsletter -->
-
+    {% for message in app.flashes('notice') %}
+      <div id="flashbag" class="alert alert-danger flashbag">
+          {{ message }}
+      </div>
+    {% endfor %}
+    {% for message in app.flashes('error') %}
+      <div id="flashbag" class="alert alert-danger flashbag">
+          {{ message }}
+      </div>
+    {% endfor %}
+    {% for message in app.flashes('success') %}
+        <div id="flashbag" class="alert alert-success flashbag">
+            {{ message }}
+        </div>
+    {% endfor %}
       <div class="newsletter">
         <div class="container">
           <div class="row">
@@ -416,9 +430,9 @@
               <div class="newsletter_container d-flex flex-lg-row flex-column align-items-lg-center align-items-center justify-content-lg-start justify-content-center">
                 <div class="newsletter_title_container">
                   <div class="newsletter_icon"><img src="{{ asset('images/send.png')}}" alt=""></div>
-                  <div class="newsletter_title">Sign up for Newsletter</div>
+                  <div class="newsletter_title">Inscrivez vous à notre Newsletter</div>
                   <div class="newsletter_text">
-                    <p>...and receive %20 coupon for first shopping.</p>
+                    <p>...et soyez les premiers informés de nos promotions.</p>
                   </div>
                 </div>
                   <div class="newsletter_content clearfix">

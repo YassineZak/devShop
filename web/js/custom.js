@@ -1065,7 +1065,7 @@ var placeSearch, autocompleteLivraison, autocompleteFacturation;
 
         // When the user selects an address from the dropdown, populate the address
         // fields in the form.
-        autocomplete.addListener('place_changed', fillInAddress);
+        //autocomplete.addListener('place_changed', fillInAddress);
       }
 
       function fillInAddress() {
@@ -1171,5 +1171,11 @@ $(document).ready(function(){
     if(/chrom(e|ium)/.test(navigator.userAgent.toLowerCase())){
         $('.header_search_input').css('height', '55px');
         $('#selectCart').css({'width':'35px', 'padding-left':'10px'});
+    }
+})
+$(document).ready(function(){
+    if($("#flashbag")){
+        $('html,body').animate({scrollTop: $("#flashbag").offset().top}, 'slow');
+        $('#flashbag').delay(5000).fadeOut('slow');
     }
 })
