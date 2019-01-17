@@ -1,0 +1,6 @@
+
+    {{ form_start(form, {'action': path('yz_mail_chimp_homepage'), 'method': 'post', 'attr': {'class': 'newsletter_form'}}) }}
+    {{ form_widget(form.newsletter, {'attr': {'class': 'newsletter_input', 'name': 'newsletter', 'placeholder': 'Enter your email address', 'required': 'required'}} )}}
+    <button class="newsletter_button">Subscribe</button>
+    {{ form_end(form) }}
+

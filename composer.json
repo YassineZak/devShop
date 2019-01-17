@@ -39,7 +39,8 @@
         "knplabs/knp-snappy-bundle": "^1.5",
         "knplabs/knp-snappy": "^1.0",
         "fabpot/goutte": "^3.2",
-        "doctrine/doctrine-fixtures-bundle": "2.3.0"
+        "doctrine/doctrine-fixtures-bundle": "2.3.0",
+        "drewm/mailchimp-api": "^2.5"
 
     },
     "require-dev": {
