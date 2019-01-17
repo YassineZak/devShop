@@ -34,9 +34,11 @@ class NewsletterController extends Controller
         $listId = "6bbe9bec78";
         $membersMail= $mailChimp->get("lists/$listId/members");
         $emailExist = false;
-        foreach ($membersMail['members'] as $member) {
-            if ($member['email_address'] == $userMail){
-                $emailExist = true;
+        if (is_array($membersMail)){
+            foreach ($membersMail['members'] as $member) {
+                if ($member['email_address'] == $userMail){
+                    $emailExist = true;
+                }
             }
         }
         if ($emailExist){
@@ -55,6 +57,9 @@ class NewsletterController extends Controller
             }
         }
         return $this->redirectToRoute('yz_ecommerce_homepage');
+
+    }
+    public function deleteUserAction(){
 
     }
 }
