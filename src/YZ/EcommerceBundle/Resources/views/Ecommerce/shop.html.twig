@@ -1,5 +1,12 @@
 {% extends "YZEcommerceBundle::layout.html.twig" %}
 
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('styles/shop_styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('styles/shop_responsive.css') }}">
+{% endblock %}
+
 {% block title %}
   Boutique -
   {{ parent() }}

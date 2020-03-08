@@ -1,5 +1,12 @@
 {% extends "YZEcommerceBundle::layout.html.twig" %}
 
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('styles/product_styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('styles/product_responsive.css') }}">
+{% endblock %}
+
 {% block title %}
 {{product.titre|capitalize}} - {{ parent() }}
 {% endblock %}
